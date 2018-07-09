@@ -14,6 +14,8 @@ let {
    SESSION_SECRET
 } = process.env
 
+const ctrl = require('./controller');
+
 app.use(session({
     secret: SESSION_SECRET,
     resave: false,
@@ -43,11 +45,11 @@ app.get('/auth/callback', async (req, res) => {
     let userExists = await db.find_user([sub])
     if(userExists[0]) {
         req.session.user = userExists[0];
-        res.redirect('http://localhost:3000/#/private');
+        res.redirect('http://localhost:3000/#/dashboard');
     } else {
         db.create_user([sub, name, picture]).then( createdUser => {
             req.session.user = createdUser[0];
-            res.redirect('http://localhost:3000/#/private');
+            res.redirect('http://localhost:3000/#/dashboard');
         })
     }
 
@@ -65,6 +67,9 @@ app.get('/api/logout', (req, res)=>{
     req.session.destroy()
     res.redirect('http://localhost:3000/#/')
 })
+
+app.post('/api/students', ctrl.addStudent)
+app.get('/api/students', ctrl.getAllStudents)
 
 
 app.listen(PORT, () => {
