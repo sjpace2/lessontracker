@@ -35,6 +35,11 @@ module.exports = {
         req.app.get('db').delete_student([id])
         .then(students => next())
         
+    },
+
+    getNameOfUser: (req, res) => {
+        const {user_name, user_pic} = req.session.user;
+       res.status(200).send(user_name)
     }
  }
 

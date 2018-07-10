@@ -78,9 +78,10 @@ app.get('/api/logout', (req, res)=>{
     res.redirect('http://localhost:3000/#/')
 })
 
-app.post('/api/students', ctrl.addStudent)
-app.get('/api/students', ctrl.getAllStudents)
-app.delete('/api/students/:id', ctrl.deleteStudent, ctrl.getAllStudents)
+app.post('/api/students', ctrl.addStudent);
+app.get('/api/students', ctrl.getAllStudents);
+app.delete('/api/students/:id', ctrl.deleteStudent, ctrl.getAllStudents);
+app.get('/api/users', ctrl.getNameOfUser);
 
 
 app.listen(PORT, () => {
