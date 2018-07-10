@@ -14,7 +14,7 @@ class Dashboard extends Component {
     }
 
     deleteStudent = (id) => {
-        axios.delete(`/api/students/${id}`).then(res => {
+         axios.delete(`/api/students/${id}`).then(res => {
             this.props.getStudentData(res.data)
         })
     }
@@ -33,9 +33,9 @@ class Dashboard extends Component {
 
     return (
        <div>
-        <div className = "dashboard">view all students here</div>
-        <button onClick = { ()=>this.props.history.push('/Add_student') }>Add a student</button>
+        <div className = "dashboard"></div>
         {displayedStudents}
+        <button onClick = { ()=>this.props.history.push('/Add_student') }>Add a student</button>
         </div>
     )
     }

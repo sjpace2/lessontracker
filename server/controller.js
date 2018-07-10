@@ -30,10 +30,11 @@ module.exports = {
         
     },
 
-    deleteStudent: (req, res) => {
+    deleteStudent: (req, res, next) => {
         const {id} = req.params;
         req.app.get('db').delete_student([id])
-        .then(students => res.status(200).send(students)) 
+        .then(students => next())
+        
     }
  }
 

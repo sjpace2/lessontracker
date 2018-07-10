@@ -50,14 +50,15 @@ class Add_student extends Component {
 
     sendStudentInfo = () => {
         axios.post('/api/students', {first_name: this.state.firstname, last_name: this.state.lastname, email: this.state.email, phone: this.state.phone, day: this.state.day, time: this.state.time}).then( res => {
-            this.props.createNewStudent(res.data[0]);
+            this.props.createNewStudent(res.data[0])
+            this.props.history.push('/dashboard');
         })
     }
 
-    submitButtonOnClick = async () => {
-        await this.sendStudentInfo();
-        this.props.history.push('/dashboard');
-    }
+    // submitButtonOnClick = () => {
+    //     this.sendStudentInfo();
+    //     this.props.history.push('/dashboard');
+    // }
     
 
 
@@ -74,7 +75,7 @@ class Add_student extends Component {
                     <input placeholder = "Lesson Time" type = "text" onChange = { e => this.handleTimeChange( e.target.value)}/>
                 </div>
             <button onClick = { () => this.props.history.push('/Dashboard') }>Back to all students</button>
-            <button onClick = {this.submitButtonOnClick} >Submit</button>
+            <button onClick = {(event) => {this.sendStudentInfo()}} >Submit</button>
         </div>
     )
 }
