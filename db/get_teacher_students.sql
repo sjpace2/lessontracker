@@ -1,3 +1,3 @@
-SELECT first_name, last_name 
+SELECT *
 FROM students
 WHERE user_id = $1

@@ -8,21 +8,23 @@ class Dashboard extends Component {
     
     componentDidMount = () => {
         axios.get('/api/students').then(res => {
-            console.log(res.data)
-            this.props.getStudentData(res.data[0])
             
+            this.props.getStudentData(res.data)
         })
     }
     
     render(){
+        console.log(this.props.student)
         
-      //need to map over res.data to display more than just [0]
+      let displayedStudents = this.props.student.map((student, index) => {
+          return <div key={student.id}> {student.first_name + ' ' + student.last_name} </div>
+      }) 
 
     return (
        <div>
         <div className = "dashboard">view all students here</div>
         <button onClick = { ()=>this.props.history.push('/Add_student') }>Add a student</button>
-        {this.props.student.first_name}
+        {displayedStudents}
         </div>
     )
     }

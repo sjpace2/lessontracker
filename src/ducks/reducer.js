@@ -1,12 +1,5 @@
 const intialState = {
-    student: {
-        first_name: '',
-        last_name: '',
-        email: '',
-        phone: '',
-        day: '',
-        time: '' 
-    }
+    student: []
 }
 
 const STUDENT_DATA = 'STUDENT_DATA';
@@ -30,8 +23,8 @@ export function createNewStudent (studentData) {
 
 export default function reducer (state=intialState, action) {
     switch (action.type) {
-        case STUDENT_DATA:
-            return Object.assign({}, state, {student: action.payload})
+        case STUDENT_DATA:  
+        return Object.assign({}, state, {student: action.payload})
         
         case NEW_STUDENT_DATA:
             return Object.assign({}, state, {studentData: action.payload})
