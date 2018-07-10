@@ -53,8 +53,13 @@ class Add_student extends Component {
             this.props.createNewStudent(res.data[0]);
         })
     }
+
+    submitButtonOnClick = async () => {
+        await this.sendStudentInfo();
+        this.props.history.push('/dashboard');
+    }
     
-//problem may be user_id on students is not populating each time I create a new student
+
 
     render() {
     return (
@@ -69,7 +74,7 @@ class Add_student extends Component {
                     <input placeholder = "Lesson Time" type = "text" onChange = { e => this.handleTimeChange( e.target.value)}/>
                 </div>
             <button onClick = { () => this.props.history.push('/Dashboard') }>Back to all students</button>
-            <button onClick = {this.sendStudentInfo} >Submit</button>
+            <button onClick = {this.submitButtonOnClick} >Submit</button>
         </div>
     )
 }
