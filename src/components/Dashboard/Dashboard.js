@@ -5,10 +5,25 @@ import { connect } from 'react-redux';
 import './../../styles/main.css';
 
 class Dashboard extends Component {
-    render(){
     
+    componentDidMount = () => {
+        axios.get('/api/students').then(res => {
+            console.log(res.data)
+            this.props.getStudentData(res.data[0])
+            
+        })
+    }
+    
+    render(){
+        
+      //need to map over res.data to display more than just [0]
+
     return (
+       <div>
         <div className = "dashboard">view all students here</div>
+        <button onClick = { ()=>this.props.history.push('/Add_student') }>Add a student</button>
+        {this.props.student.first_name}
+        </div>
     )
     }
 }

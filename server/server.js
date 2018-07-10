@@ -5,6 +5,7 @@ require('dotenv').config();
 const axios = require('axios');
 const massive = require('massive');
 const session = require('express-session');
+const bodyParser = require('body-parser');
 
 let {
    REACT_APP_CLIENT_ID,
@@ -16,6 +17,8 @@ let {
 
 const ctrl = require('./controller');
 
+app.use(bodyParser.json());
+
 app.use(session({
     secret: SESSION_SECRET,
     resave: false,
@@ -23,8 +26,9 @@ app.use(session({
 }));
 
 massive(CONNECTION_STRING).then(db => {
-    app.set('db', db);
-})
+    app.set('db', db)
+    console.log('DB Connected');
+}).catch( err => console.log(err));
 
 app.get('/auth/callback', async (req, res) => {
     let payload = {
@@ -59,7 +63,7 @@ app.get('/api/user-data', (req, res)=>{
     if(req.session.user) {
         res.status(200).send(req.session.user)
     } else {
-        res.status(401).send('Nice try sucka')
+        res.status(401).send('Nice try')
     }
 })
 
@@ -75,4 +79,6 @@ app.get('/api/students', ctrl.getAllStudents)
 app.listen(PORT, () => {
     console.log(`Listening on Port ${PORT}`);
 });
+
+
 
