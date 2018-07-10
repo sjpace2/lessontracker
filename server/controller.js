@@ -24,10 +24,16 @@ module.exports = {
 
     getAllStudents: (req, res) => {
         const {id} = req.session.user;
-        req.app.get('db').get_teacher_students(id)
+        req.app.get('db').get_teacher_students([id])
         .then(students => res.status(200).send(students))
         
         
+    },
+
+    deleteStudent: (req, res) => {
+        const {id} = req.params;
+        req.app.get('db').delete_student([id])
+        .then(students => res.status(200).send(students)) 
     }
-}
+ }
 

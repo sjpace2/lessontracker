@@ -80,6 +80,7 @@ app.get('/api/logout', (req, res)=>{
 
 app.post('/api/students', ctrl.addStudent)
 app.get('/api/students', ctrl.getAllStudents)
+app.delete('/api/students/:id', ctrl.deleteStudent)
 
 
 app.listen(PORT, () => {
