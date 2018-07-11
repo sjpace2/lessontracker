@@ -60,8 +60,47 @@ module.exports = {
         const {id} = req.params;
         const {first_name} = req.body;
         req.app.get('db').edit_first_name([first_name, id])
-        .then(students => res.status(200).send(first_name) )
+        
+        .then(students => res.status(200).send(first_name))
+        
+
+    },
+    
+    editLastName: (req, res) => {
+        const {id} = req.params;
+        const {last_name} = req.body;
+        req.app.get('db').edit_last_name([last_name, id])
+        .then(students => res.status(200).send(last_name) )
+    },
+
+    editEmail: (req, res) => {
+        const {id} = req.params;
+        const {email} = req.body;
+        req.app.get('db').edit_last_name([email, id])
+        .then(students => res.status(200).send(email) )
+    },
+
+    editPhone: (req, res) => {
+        const {id} = req.params;
+        const {phone} = req.body;
+        req.app.get('db').edit_last_name([phone, id])
+        .then(students => res.status(200).send(phone) )
+    },
+
+    editDay: (req, res) => {
+        const {id} = req.params;
+        const {day} = req.body;
+        req.app.get('db').edit_last_name([day, id])
+        .then(students => res.status(200).send(day) )
+    },
+
+    editTime: (req, res) => {
+        const {id} = req.params;
+        const {time} = req.body;
+        req.app.get('db').edit_last_name([time, id])
+        .then(students => res.status(200).send(time) )
     }
+    
  }
 
 
