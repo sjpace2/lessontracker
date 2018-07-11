@@ -6,7 +6,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Note_details from './components/Note_details/Note_details';
 import Notes from './components/Notes/Notes';
 import Student_detail from './components/Student_detail/Student_detail';
-import Edit_student from './components/Edit_student/Edit_student';
+
 
 export default (
     <Switch>
@@ -14,8 +14,8 @@ export default (
         <Route path = '/add_student' component = { Add_student }/>
         <Route path = '/dashboard' component = { Dashboard }/>
         <Route path = '/note_details' component = { Note_details }/>
-        <Route path = '/notes' component = { Notes }/>
+        <Route path = '/notes/:id' component = { Notes }/>
         <Route path = '/student_detail/:id' component = { Student_detail }/>
-        <Route path = '/edit_student' component = { Edit_student }/>
+        
     </Switch>
 )

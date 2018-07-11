@@ -15,7 +15,7 @@ class Nav extends Component {
 
     componentDidMount = () => {
         axios.get('/api/users').then(res=>{
-            console.log(res.data)
+            
             this.setState({nameOfUser: res.data })
         })
     }

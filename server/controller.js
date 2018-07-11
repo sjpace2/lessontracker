@@ -100,6 +100,19 @@ module.exports = {
         const {time} = req.body;
         req.app.get('db').edit_time([time, id])
         .then(students => res.status(200).send(time) )
+    },
+
+    addNote: (req, res) => {
+        const {id} = req.params;
+        const {note} = req.body;
+        req.app.get('db').add_note([note, id])
+        .then(notes => res.status(200).send(notes))
+    },
+
+    getUserNotes: (req, res) => {
+        const {id} = req.params;
+        req.app.get('db').get_user_notes([id])
+        .then(notes => res.status(200).send(notes))
     }
     
  }

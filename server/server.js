@@ -88,7 +88,8 @@ app.put('/api/students/email/:id', ctrl.editEmail);
 app.put('/api/students/phone/:id', ctrl.editPhone);
 app.put('/api/students/day/:id', ctrl.editDay);
 app.put('/api/students/time/:id', ctrl.editTime);
-
+app.post('/api/notes/:id', ctrl.addNote)
+app.get('/api/userNotes/:id', ctrl.getUserNotes)
 
 app.listen(PORT, () => {
     console.log(`Listening on Port ${PORT}`);
