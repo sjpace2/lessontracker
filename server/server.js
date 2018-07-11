@@ -82,12 +82,12 @@ app.post('/api/students', ctrl.addStudent);
 app.get('/api/students', ctrl.getAllStudents);
 app.delete('/api/students/:id', ctrl.deleteStudent, ctrl.getAllStudents);
 app.get('/api/users', ctrl.getNameOfUser);
-app.put('/api/students/:id', ctrl.editFirstName);
-app.put('/api/students/:id', ctrl.editLastName);
-app.put('/api/students/:id', ctrl.editEmail);
-app.put('/api/students/:id', ctrl.editPhone);
-app.put('/api/students/:id', ctrl.editDay);
-app.put('/api/students/:id', ctrl.editTime);
+app.put('/api/students/first/:id', ctrl.editFirstName);
+app.put('/api/students/last/:id', ctrl.editLastName);
+app.put('/api/students/email/:id', ctrl.editEmail);
+app.put('/api/students/phone/:id', ctrl.editPhone);
+app.put('/api/students/day/:id', ctrl.editDay);
+app.put('/api/students/time/:id', ctrl.editTime);
 
 
 app.listen(PORT, () => {

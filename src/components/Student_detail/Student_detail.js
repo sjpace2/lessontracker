@@ -53,42 +53,45 @@ class Student_detail extends Component {
     }
 
     updateFirst = (id) => {
-        axios.put(`api/students/${id}`, {first_name: this.state.first})
+        axios.put(`api/students/first/${id}`, {first_name: this.state.first})
         .then(res => {
+            
             this.props.createNewStudent(res.data[0])
         })
     }
 
     updateLast = (id) => {
-        axios.put(`api/students/${id}`, {last_name: this.state.last})
+        axios.put(`api/students/last/${id}`, {last_name: this.state.last})
         .then(res => {
+            
+            console.log(res.data)
             this.props.createNewStudent(res.data[0])
         })
     }
 
     updateEmail = (id) => {
-        axios.put(`api/students/${id}`, {email: this.state.email})
+        axios.put(`api/students/email/${id}`, {email: this.state.email})
         .then(res => {
             this.props.createNewStudent(res.data[0])
         })
     }
 
     updatePhone = (id) => {
-        axios.put(`api/students/${id}`, {phone: this.state.phone})
+        axios.put(`api/students/phone/${id}`, {phone: this.state.phone})
         .then(res => {
             this.props.createNewStudent(res.data[0])
         })
     }
 
     updateDay = (id) => {
-        axios.put(`api/students/${id}`, {day: this.state.day})
+        axios.put(`api/students/day/${id}`, {day: this.state.day})
         .then(res => {
             this.props.createNewStudent(res.data[0])
         })
     }
 
     updateTime = (id) => {
-        axios.put(`api/students/${id}`, {time: this.state.time})
+        axios.put(`api/students/time/${id}`, {time: this.state.time})
         .then(res => {
             this.props.createNewStudent(res.data[0])
         })
