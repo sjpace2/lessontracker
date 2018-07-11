@@ -12,6 +12,20 @@ module.exports = {
     //     next();
     // },
 
+    ignoreAuthInDevelopment: (req, res, next) => {
+        if(process.env.MODE === 'development' && !req.session.user){
+            req.session.user = {
+                id:1, 
+                auth_id:'google-oauth2|102948968802324753832', 
+                user_name: 'Stephen Pace',	
+                user_pic: 'https://lh5.googleusercontent.com/-sapgzN9K2rg/AAAAAAAAAAI/AAAAAAAAAwg/RLOCqjo6wDU/photo.jpg',
+            };
+            next();
+        } else {
+            next();
+        }
+    },
+
     addStudent: (req, res) => {
         
         const {id: user_id} = req.session.user;

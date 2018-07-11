@@ -30,12 +30,12 @@ massive(CONNECTION_STRING).then(db => {
     console.log('DB Connected');
 }).catch( err => console.log(err));
 
-// app.use(ctrl.ignoreAuthInDevelopment)
+app.use(ctrl.ignoreAuthInDevelopment)
 
 app.get('/auth/callback', async (req, res) => {
-    // if(req.session.user){
-    //     return res.redirect('http://localhost:3000/#/dashboard');
-    // }
+    if(req.session.user){
+        return res.redirect('http://localhost:3000/#/dashboard');
+    }
 
     let payload = {
         client_id: REACT_APP_CLIENT_ID,

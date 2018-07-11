@@ -20,12 +20,12 @@ class Dashboard extends Component {
     }
     
     render(){
-        console.log(this.props.student)
+        
         
       let displayedStudents = this.props.student.map((student, index) => {
           return (
               <div key={student.id}> {student.first_name + ' ' + student.last_name} <button>notes</button> 
-              <button>edit</button>
+              <button onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)  } >view details</button>
               <button onClick = {()=>this.deleteStudent(student.id)}>delete</button>
           </div>
           )

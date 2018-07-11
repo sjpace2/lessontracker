@@ -14,6 +14,6 @@ export default (
         <Route path = '/dashboard' component = { Dashboard }/>
         <Route path = '/note_details' component = { Note_details }/>
         <Route path = '/notes' component = { Notes }/>
-        <Route path = '/student_detail' component = { Student_detail }/>
+        <Route path = '/student_detail/:id' component = { Student_detail }/>
     </Switch>
 )

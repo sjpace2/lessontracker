@@ -7,7 +7,8 @@ class Nav extends Component {
     constructor () {
         super ()
         this.state = {
-            nameOfUser: ''
+            nameOfUser: '',
+            pic: ''
         }
     }
 
@@ -15,7 +16,7 @@ class Nav extends Component {
     componentDidMount = () => {
         axios.get('/api/users').then(res=>{
             console.log(res.data)
-            this.setState({nameOfUser: res.data})
+            this.setState({nameOfUser: res.data })
         })
     }
 
@@ -26,7 +27,7 @@ class Nav extends Component {
             return 
         } else {
             return displayNav = 
-            <div>
+            <div className="navbar">
             Welcome {this.state.nameOfUser}
 
 

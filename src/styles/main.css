@@ -48,3 +48,11 @@ table {
 .dashboard {
   background-color: yellow;
   font-size: 50px; }
+
+.navbar {
+  width: 100vw;
+  height: 50px;
+  background-color: gray;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  align-items: center; }
