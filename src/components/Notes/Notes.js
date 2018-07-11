@@ -41,6 +41,7 @@ class Notes extends Component {
                 note: res.data
             })
         })
+        this.componentDidMount()
     }
 
 
@@ -64,7 +65,7 @@ class Notes extends Component {
         return (
             <div>
                 {selectedStudent.first_name} {selectedStudent.last_name}
-                <button onClick={()=>this.props.history.push('/note_details')}>view</button>
+                
                 <input onChange={e=>this.handleNoteChange(e.target.value)} type="text"/>
                 <button onClick={()=>this.submitNewNote(selectedStudent.id)}>save note</button>
                 

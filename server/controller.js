@@ -102,11 +102,12 @@ module.exports = {
         .then(students => res.status(200).send(time) )
     },
 
-    addNote: (req, res) => {
+    addNote: (req, res, next) => {
         const {id} = req.params;
         const {note} = req.body;
         req.app.get('db').add_note([note, id])
         .then(notes => res.status(200).send(notes))
+        .then(notes => next())
     },
 
     getUserNotes: (req, res) => {
@@ -114,6 +115,7 @@ module.exports = {
         req.app.get('db').get_user_notes([id])
         .then(notes => res.status(200).send(notes))
     }
+    
     
  }
 
