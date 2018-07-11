@@ -20,7 +20,6 @@ export function createNewStudent (studentData) {
 }
 
 
-
 export default function reducer (state=intialState, action) {
     switch (action.type) {
         case STUDENT_DATA:  

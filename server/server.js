@@ -82,6 +82,7 @@ app.post('/api/students', ctrl.addStudent);
 app.get('/api/students', ctrl.getAllStudents);
 app.delete('/api/students/:id', ctrl.deleteStudent, ctrl.getAllStudents);
 app.get('/api/users', ctrl.getNameOfUser);
+app.put('/api/students/:id', ctrl.editFirstName);
 
 
 app.listen(PORT, () => {

@@ -54,6 +54,15 @@ module.exports = {
     getNameOfUser: (req, res) => {
         const {user_name, user_pic} = req.session.user;
        res.status(200).send(user_name)
+    },
+
+    editFirstName: (req, res) => {
+        const {id} = req.params;
+        const {first_name} = req.body;
+        req.app.get('db').edit_first_name([first_name, id])
+        .then(students => res.status(200).send(first_name) )
     }
  }
+
+
 
