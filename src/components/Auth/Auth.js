@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './../../styles/Auth/logo/logo.png';
 
 export default function Auth () {
     
@@ -11,12 +12,18 @@ export default function Auth () {
     }
     
     return (
-        <div>
-
-            some image
-
-            <button onClick={login} >Login</button>
-
+        <div className="login">
+            <div className="logo">
+             Lesson Tracker
+            </div>
+            <img src={logo} alt="logo"/>
+            <div className="slogan">
+            Teach Simply
+            </div>
+            
+            <div className="button">
+            <button onClick={login} >Enter</button>
+            </div>
         </div>
     )
 }

@@ -45,6 +45,45 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  background-color: #163669; }
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 210px; }
+
+img {
+  height: 100px;
+  margin: -120px 1px 1px -450px; }
+
+.logo {
+  display: flex;
+  color: white;
+  font-size: 63px;
+  padding: 40px;
+  font-family: 'Dosis', sans-serif; }
+
+.slogan {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  margin: -16px 116px 50px 290px;
+  text-transform: uppercase; }
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  border: 1px solid;
+  color: white; }
+  .button button {
+    background: none;
+    font-size: 30px;
+    color: white;
+    border: none; }
+
 .dashboard {
   background-color: yellow;
   font-size: 50px; }
