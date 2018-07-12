@@ -26,23 +26,25 @@ class Dashboard extends Component {
         
       let displayedStudents = this.props.student.map((student, index) => {
           return (
-            <div key={student.id}> 
+            <div className='student' key={student.id}> 
               
               {student.first_name + ' ' + student.last_name} 
               
-              <button onClick = {()=>this.props.history.push(`/notes/${student.id}`)}>notes</button> 
-              <button onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}>view details</button>
-              <button onClick = {()=>this.deleteStudent(student.id)}>delete</button>
+              <button className='notes' onClick = {()=>this.props.history.push(`/notes/${student.id}`)}>notes</button> 
+              <button className='details' onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}>view details</button>
+              <button className='delete' onClick = {()=>this.deleteStudent(student.id)}>delete</button>
             </div>
           )
       }) 
-//do join on view all student notes
+
     return (
-       <div>
-        <div className = "dashboard"></div>
-        {displayedStudents}
-        <button onClick = { ()=>this.props.history.push('/Add_student') }>Add a student</button>
-        <button onClick={()=>this.props.history.push('/allNotes')}>View all student notes</button> 
+       <div className='dashboard'>
+            <div className='add' >
+                <button className='addstudent' onClick = { ()=>this.props.history.push('/Add_student') }>Add a student</button>
+                <button className='allnotes' onClick={()=>this.props.history.push('/allNotes')}>View all student notes</button> 
+            </div>
+            <div className='students' >{displayedStudents}</div>
+            
         </div>
     )
     }

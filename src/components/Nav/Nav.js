@@ -20,6 +20,12 @@ class Nav extends Component {
         })
     }
 
+    logout = () => {
+        axios.get('/api/logout').then(res=>{
+            this.props.history.push('/')
+        })
+    }
+
     render(){
     
     let displayNav = () => {
@@ -28,14 +34,16 @@ class Nav extends Component {
         } else {
             return displayNav = 
             <div className="navbar">
-            Welcome {this.state.nameOfUser}
-
-
+                <div className='welcome'>{this.state.nameOfUser}</div>
+                <div className='title'>Lesson Tracker</div>
+                <button className='logout' onClick = { this.logout } >Logout</button>
             </div>
         }
     }
     return (
-        <div>{displayNav()}</div>
+       <div>
+        {displayNav()} 
+        </div>
     )
 }
 }

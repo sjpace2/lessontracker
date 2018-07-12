@@ -85,13 +85,38 @@ img {
     color: white;
     border: none; }
 
-.dashboard {
-  font-size: 50px; }
+.add {
+  display: flex;
+  justify-content: space-around;
+  height: 40px; }
+
+.addstudent {
+  border: 1px;
+  background: bisque;
+  height: 40px; }
+
+.allnotes {
+  border: 1px;
+  background: bisque;
+  height: 40px; }
 
 .navbar {
   width: 100vw;
   height: 50px;
-  background-color: gray;
+  background-color: #163669;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: space-between;
+  color: bisque; }
+
+.welcome {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  padding: 5px; }
+
+.logout {
+  color: bisque; }
+
+.title {
+  font-family: 'Dosis', sans-serif; }
