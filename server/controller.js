@@ -106,8 +106,8 @@ module.exports = {
         const {id} = req.params;
         const {note} = req.body;
         req.app.get('db').add_note([note, id])
-        .then(notes => res.status(200).send(notes))
         .then(notes => next())
+        
     },
 
     getUserNotes: (req, res) => {

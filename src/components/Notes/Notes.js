@@ -40,8 +40,9 @@ class Notes extends Component {
             this.setState({
                 note: res.data
             })
+            this.componentDidMount()
         })
-        this.componentDidMount()
+        
     }
 
 
@@ -53,6 +54,7 @@ class Notes extends Component {
         return student.id === param
     })
     selectedStudent = selectedStudent[0] ? selectedStudent[0] : selectedStudent
+
 
     let filteredNotes = this.state.usersNotes.map( (note, index) => {
         return (
@@ -67,7 +69,7 @@ class Notes extends Component {
                 {selectedStudent.first_name} {selectedStudent.last_name}
                 
                 <input onChange={e=>this.handleNoteChange(e.target.value)} type="text"/>
-                <button onClick={()=>this.submitNewNote(selectedStudent.id)}>save note</button>
+                <button onClick={()=>this.submitNewNote(+this.props.match.params.id)}>save note</button>
                 
                 {filteredNotes}
                 
