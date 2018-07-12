@@ -114,6 +114,14 @@ module.exports = {
         const {id} = req.params;
         req.app.get('db').get_user_notes([id])
         .then(notes => res.status(200).send(notes))
+    },
+
+    getAllNotes: (req, res) => {
+        const {id} = req.session.user;
+        req.app.get('db').get_all_notes([id])
+        .then(notes => {
+            console.log(notes)
+            res.status(200).send(notes)})
     }
     
     

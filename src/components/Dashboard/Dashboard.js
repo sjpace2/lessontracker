@@ -18,6 +18,8 @@ class Dashboard extends Component {
             this.props.getStudentData(res.data)
         })
     }
+
+   
     
     render(){
         
@@ -34,12 +36,13 @@ class Dashboard extends Component {
             </div>
           )
       }) 
-
+//do join on view all student notes
     return (
        <div>
         <div className = "dashboard"></div>
         {displayedStudents}
         <button onClick = { ()=>this.props.history.push('/Add_student') }>Add a student</button>
+        <button onClick={()=>this.props.history.push('/allNotes')}>View all student notes</button> 
         </div>
     )
     }

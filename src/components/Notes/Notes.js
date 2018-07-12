@@ -36,7 +36,7 @@ class Notes extends Component {
     submitNewNote = (id) => {
         axios.post(`/api/notes/${id}`, {note: this.state.note})
         .then(res => {
-            console.log(res.data)
+            
             this.setState({
                 note: res.data
             })

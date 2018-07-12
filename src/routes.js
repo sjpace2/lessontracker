@@ -5,6 +5,7 @@ import Add_student from './components/Add_student/Add_student';
 import Dashboard from './components/Dashboard/Dashboard';
 import Notes from './components/Notes/Notes';
 import Student_detail from './components/Student_detail/Student_detail';
+import allNotes from './components/AllNotes/AllNotes';
 
 
 export default (
@@ -14,6 +15,7 @@ export default (
         <Route path = '/dashboard' component = { Dashboard }/>
         <Route path = '/notes/:id' component = { Notes }/>
         <Route path = '/student_detail/:id' component = { Student_detail }/>
+        <Route path = '/allnotes' component = { allNotes }/>
         
     </Switch>
 )
