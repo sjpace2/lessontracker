@@ -119,9 +119,7 @@ module.exports = {
     getAllNotes: (req, res) => {
         const {id} = req.session.user;
         req.app.get('db').get_all_notes([id])
-        .then(notes => {
-            console.log(notes)
-            res.status(200).send(notes)})
+        .then(notes => res.status(200).send(notes))
     }
     
     

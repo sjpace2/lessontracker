@@ -16,7 +16,9 @@ export default function Auth () {
             <div className="logo">
              Lesson Tracker
             </div>
+            
             <img src={logo} alt="logo"/>
+            
             <div className="slogan">
             Teach Simply
             </div>
