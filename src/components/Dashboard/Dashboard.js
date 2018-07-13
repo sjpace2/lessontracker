@@ -33,6 +33,7 @@ class Dashboard extends Component {
               <button className='notes' onClick = {()=>this.props.history.push(`/notes/${student.id}`)}>notes</button> 
               <button className='details' onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}>view details</button>
               <button className='delete' onClick = {()=>this.deleteStudent(student.id)}>delete</button>
+              <button onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}>Payments</button>
             </div>
           )
       }) 

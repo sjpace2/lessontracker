@@ -91,6 +91,7 @@ app.put('/api/students/time/:id', ctrl.editTime);
 app.post('/api/notes/:id', ctrl.addNote, ctrl.getUserNotes)
 app.get('/api/userNotes/:id', ctrl.getUserNotes)
 app.get('/api/allnotes', ctrl.getAllNotes);
+app.post('/api/payments', ctrl.addPayment)
 
 app.listen(PORT, () => {
     console.log(`Listening on Port ${PORT}`);

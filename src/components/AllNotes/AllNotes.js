@@ -25,7 +25,7 @@ class allNotes extends Component {
        let displayedNotes = this.state.notes.map( (note, index) => {
         return (
                 <div key={index}>
-                {note.first_name} {note.last_name}: {note.content}
+                {note.first_name} {note.last_name}: {note.date} {note.content} 
                 </div>
                 )
     })

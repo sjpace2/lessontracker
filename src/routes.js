@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Notes from './components/Notes/Notes';
 import Student_detail from './components/Student_detail/Student_detail';
 import allNotes from './components/AllNotes/AllNotes';
+import Payments from './components/Payments/Payments';
 
 
 export default (
@@ -16,6 +17,6 @@ export default (
         <Route path = '/notes/:id' component = { Notes }/>
         <Route path = '/student_detail/:id' component = { Student_detail }/>
         <Route path = '/allnotes' component = { allNotes }/>
-        
+        <Route path = '/payments/:id' component = { Payments }/>
     </Switch>
-)
+    )

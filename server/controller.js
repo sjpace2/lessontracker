@@ -120,9 +120,18 @@ module.exports = {
         const {id} = req.session.user;
         req.app.get('db').get_all_notes([id])
         .then(notes => res.status(200).send(notes))
-    }
-    
-    
+    },
+
+    addPayment: (req, res) => {
+        const {id, amount, date} = req.body;
+        const {id: allpayment_id} = req.session.user;
+        req.app.get('db').add_payments([amount, id, date])
+        .then(payments => {
+        
+        req.app.get('db').add_allpayments([amount, allpayment_id, date])
+        .then(payments => res.status(200).send(payments)) 
+        })
+    }    
  }
 
 

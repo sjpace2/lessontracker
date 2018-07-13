@@ -61,7 +61,7 @@ class Notes extends Component {
     let filteredNotes = this.state.usersNotes.map( (note, index) => {
         return (
         <div key={index}>
-             {note.date}: {note.content}
+             {note.date}: {note.content} 
         </div>
         )
     })
