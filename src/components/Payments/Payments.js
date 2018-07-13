@@ -18,11 +18,9 @@ class Payments extends Component {
     }
 
     sendAmount = (amount) => {
+        let date = new Date().toDateString();
         let id = +this.props.match.params.id
-        axios.post('/api/payments', {amount, id})
-        .then(res =>{
-            
-        })
+        axios.post('/api/payments', {amount, id, date})
     }
 
     render (){
