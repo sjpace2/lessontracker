@@ -9,6 +9,7 @@
     border: 1px;
     background: bisque;
     height: 40px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .allnotes {
@@ -16,12 +17,29 @@
     border: 1px;
     background: bisque;
     height: 40px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .students {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     height: 300px;
+    
+    
+}
+
+.student {
+    height: 50px;
+    background: #3996A8;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
 }
 

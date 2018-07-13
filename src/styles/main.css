@@ -93,18 +93,31 @@ img {
 .addstudent {
   border: 1px;
   background: bisque;
-  height: 40px; }
+  height: 40px;
+  font-family: 'Montserrat', sans-serif; }
 
 .allnotes {
   border: 1px;
   background: bisque;
-  height: 40px; }
+  height: 40px;
+  font-family: 'Montserrat', sans-serif; }
 
 .students {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   height: 300px; }
+
+.student {
+  height: 50px;
+  background: #3996A8;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .student div {
+    display: flex;
+    align-items: center; }
 
 .navbar {
   width: 100vw;
@@ -122,7 +135,13 @@ img {
   padding: 5px; }
 
 .logout {
-  color: bisque; }
+  color: black;
+  font-family: 'Montserrat', sans-serif; }
 
 .title {
-  font-family: 'Dosis', sans-serif; }
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px; }
+
+.date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; }

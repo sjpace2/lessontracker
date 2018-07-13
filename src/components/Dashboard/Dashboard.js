@@ -28,7 +28,7 @@ class Dashboard extends Component {
           return (
             <div className='student' key={student.id}> 
               
-              {student.first_name + ' ' + student.last_name} 
+              <div>{student.first_name + ' ' + student.last_name} </div>
               
               <button className='notes' onClick = {()=>this.props.history.push(`/notes/${student.id}`)}>notes</button> 
               <button className='details' onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}>view details</button>

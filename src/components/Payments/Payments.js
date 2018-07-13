@@ -22,6 +22,11 @@ class Payments extends Component {
         let id = +this.props.match.params.id
         axios.post('/api/payments', {amount, id, date})
     }
+//here...get all payments to be mapped over and displayed
+    componentDidMount = () => {
+        axios.get('/api/getStudentPayments')
+        .then()
+    }
 
     render (){
         let selectedStudent = this.props.student.filter( student => {
