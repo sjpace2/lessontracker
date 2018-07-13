@@ -104,8 +104,8 @@ module.exports = {
 
     addNote: (req, res, next) => {
         const {id} = req.params;
-        const {note} = req.body;
-        req.app.get('db').add_note([note, id])
+        const {note, date} = req.body;
+        req.app.get('db').add_note([note, date, id])
         .then(notes => next())
         
     },

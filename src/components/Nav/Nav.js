@@ -27,6 +27,9 @@ class Nav extends Component {
     }
 
     render(){
+       
+        let todaysDate = new Date()
+        
     
     let displayNav = () => {
         if(this.props.location.pathname === '/'){
@@ -36,6 +39,7 @@ class Nav extends Component {
             <div className="navbar">
                 <div className='welcome'>{this.state.nameOfUser}</div>
                 <div className='title'>Lesson Tracker</div>
+                <div>{ todaysDate.toDateString() }</div>
                 <button className='logout' onClick = { this.logout } >Logout</button>
             </div>
         }

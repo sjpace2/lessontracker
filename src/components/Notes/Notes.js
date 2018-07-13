@@ -9,21 +9,23 @@ class Notes extends Component {
         super ()
         this.state = {
             note: '',
-            usersNotes: []
+            usersNotes: [],
+            date: ''
+            
         }
     }
 
     componentDidMount = () => {
+        let currentDate = new Date().toDateString()
         let id = this.props.match.params.id
         axios.get(`/api/userNotes/${id}`)
         .then(res => {
-            console.log(res.data)
-            
             this.setState({
-                usersNotes: res.data
-            })
-        })
-    }
+                usersNotes: res.data,
+                date: currentDate
+            })  
+        }) 
+    }  
 
     handleNoteChange = (value) => {
         this.setState({
@@ -34,11 +36,11 @@ class Notes extends Component {
     
     
     submitNewNote = (id) => {
-        axios.post(`/api/notes/${id}`, {note: this.state.note})
+        axios.post(`/api/notes/${id}`, {note: this.state.note, date: this.state.date})
         .then(res => {
-            
+            console.log(res.data)
             this.setState({
-                note: res.data
+                usersNotes: res.data
             })
             this.componentDidMount()
         })
@@ -59,7 +61,7 @@ class Notes extends Component {
     let filteredNotes = this.state.usersNotes.map( (note, index) => {
         return (
         <div key={index}>
-            {note.content}
+             {note.date}: {note.content}
         </div>
         )
     })
