@@ -74,7 +74,7 @@ class Notes extends Component {
                 <button onClick={()=>this.submitNewNote(+this.props.match.params.id)}>save note</button>
                 
                 {filteredNotes}
-                
+                <button onClick={()=>this.props.history.push('/dashboard')}>Back</button>
             </div>
         )
     }

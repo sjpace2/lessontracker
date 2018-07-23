@@ -127,11 +127,33 @@ module.exports = {
         const {id: allpayment_id} = req.session.user;
         req.app.get('db').add_payments([amount, id, date])
         .then(payments => {
-        
-        req.app.get('db').add_allpayments([amount, allpayment_id, date])
+        console.log(payments)
+        req.app.get('db').add_allpayments([amount, allpayment_id, date, id, payments[0].id])
         .then(payments => res.status(200).send(payments)) 
         })
-    }    
+    },
+    
+    getAllPayments: (req, res) => {
+        const {id} = req.session.user;
+        req.app.get('db').get_all_payments([id])
+        .then(payments => res.status(200).send(payments))
+    },
+
+    getStudentPayments: (req, res) => {
+        const {id} = req.params;
+        req.app.get('db').get_student_payments([id])
+        .then( payments => res.status(200).send( payments ))
+    },
+
+    deletePayment: (req, res) => {
+        const {id} = req.params;
+        req.app.get('db').delete_payment([id])
+        .then( payments => res.status(200).send( payments ))
+       
+    }
+
+   
+   
  }
 
 

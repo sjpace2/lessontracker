@@ -35,7 +35,7 @@ class Dashboard extends Component {
               <button className='delete' onClick = {()=>this.deleteStudent(student.id)}>delete</button>
               <button onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}>Payments</button>
             </div>
-          )
+          )//may want to move payments button to student details page
       }) 
 
     return (
@@ -43,6 +43,7 @@ class Dashboard extends Component {
             <div className='add' >
                 <button className='addstudent' onClick = { ()=>this.props.history.push('/Add_student') }>Add a student</button>
                 <button className='allnotes' onClick={()=>this.props.history.push('/allNotes')}>View all student notes</button> 
+                <button className='allPayments' onClick = { ()=>this.props.history.push('/allpayments')}>All Payments</button>
             </div>
             <div className='students' >{displayedStudents}</div>
             

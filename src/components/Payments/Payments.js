@@ -7,8 +7,23 @@ class Payments extends Component {
     constructor () {
         super ()
         this.state = {
-            payments: 0
+            payments: "",
+            paymentsList: []
         }
+    }
+
+    componentDidMount = () => {
+        this.getPayments()
+    }
+
+    deletePayment = (id) => {
+        let student_id = +this.props.match.params.id
+        axios.delete(`/api/deletePayment/${id}`, {data: {student_id}}).then(res=>{
+            this.setState({
+                paymentsList: res.data
+            })
+        })
+        this.getPayments()
     }
 
     handlePaymentsChange = (value) => {
@@ -21,14 +36,40 @@ class Payments extends Component {
         let date = new Date().toDateString();
         let id = +this.props.match.params.id
         axios.post('/api/payments', {amount, id, date})
-    }
-//here...get all payments to be mapped over and displayed
-    componentDidMount = () => {
-        axios.get('/api/getStudentPayments')
-        .then()
+        .then( res => {
+            this.setState({
+                payments: "",
+               
+            })
+            this.getPayments()})
     }
 
+    getPayments = () => {
+        let id = +this.props.match.params.id
+        axios.get(`/api/studentpayments/${id}`)
+        .then(res => {
+            this.setState({
+                paymentsList: res.data
+            })
+        })
+    }
+
+
+
     render (){
+       
+       
+        let displayedPayments = this.state.paymentsList.map( (payment, index) => {
+            return <div key={index} id={payment.id}>
+                        ${payment.amount}, {" "}
+                        {payment.date}
+                        
+                        <button onClick = {()=>this.deletePayment(payment.id)}>delete</button>
+                   </div>
+        })
+        console.log(displayedPayments)
+        
+        
         let selectedStudent = this.props.student.filter( student => {
             let param = +this.props.match.params.id
             return student.id === param
@@ -37,15 +78,21 @@ class Payments extends Component {
         
         return(
         <div>
+
             <div>
                 Payments from {selectedStudent.first_name} {selectedStudent.last_name}
             </div>
             <div>
-                <input onChange={e=>this.handlePaymentsChange(e.target.value)} type="text"/>
+                <input value = {this.state.payments} onChange={e=>this.handlePaymentsChange(e.target.value)} type="text"/>
                 <button onClick={ ()=>this.sendAmount(this.state.payments) }>Save</button>
             </div>
+            <div>
+                {displayedPayments}
+            </div>
+            
+            <button onClick={()=>this.props.history.push('/dashboard')}>Back</button>
         </div>
-        
+        //may want to have this back button go to student details at some point
         )
     }
 }
