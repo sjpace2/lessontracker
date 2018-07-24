@@ -7,15 +7,12 @@
     align-items: center;
     justify-content: space-between;
     color: bisque;
-    
-    
-
-
 }
 
 .welcome {
+    display: none;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 10px;
     padding: 5px;
 }
 
@@ -23,17 +20,24 @@
   
     font-family: 'Montserrat', sans-serif;
     color: beige !important;
-    text-transform: capitalize !important;
+    @include smallbutton;
     
 
 }
 
 .title {
+    margin-left: 10px;
     font-family: 'Dosis', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .date {
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 10px;
+}
+
+@media (min-width: 414px){
+    .welcome {
+        display: flex;
+    }
 }

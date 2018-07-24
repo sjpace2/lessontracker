@@ -9,3 +9,14 @@
     width: $width;
     height: $height;
  }
+
+ @mixin smallbutton {
+     text-transform: capitalize !important;
+     width: 67px;
+     
+ }
+
+ @mixin bigbutton {
+    text-transform: capitalize !important;
+  
+ }

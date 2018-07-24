@@ -32,10 +32,27 @@ class Dashboard extends Component {
               
               <div className='studentName'>{student.first_name + ' ' + student.last_name} </div>
               
-              <Button variant='outlined' className='notes' onClick = {()=>this.props.history.push(`/notes/${student.id}`)}> Notes </Button> 
-              <Button variant='outlined' className='details' onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}> Student Details</Button>
-              <Button variant='outlined' className='delete' onClick = {()=>this.deleteStudent(student.id)}> Delete </Button>
-              <Button variant='outlined' onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}> Payments </Button>
+            <div>
+             <div className='notes-button'>
+              <Button variant='outlined' className='notes' onClick = {()=>this.props.history.push(`/notes/${student.id}`)}> 
+              <p className='notes'><i className="far fa-sticky-note "></i> Notes</p> </Button> 
+              </div>
+              
+              <div className='info-button'>
+              <Button variant='outlined' className='info' onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}> <i class="fas fa-info-circle"></i>
+              <p className='info'>Info</p> </Button>
+              </div>
+              
+              <div className='delete-button'>
+              <Button variant='outlined' className='delete' onClick = {()=>this.deleteStudent(student.id)}> <i class="far fa-trash-alt"></i> 
+              <p className='delete'>Delete</p> </Button>
+              </div>
+              
+              <div className='payments-button'>
+              <Button variant='outlined' className='payments' onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}><i class="fas fa-dollar-sign"></i> 
+              <p className='payments'>Payments</p> </Button>
+             </div>
+             </div>
             </div>
           )//may want to move payments button to student details page
       }) 

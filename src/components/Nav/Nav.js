@@ -39,9 +39,9 @@ class Nav extends Component {
         } else {
             return displayNav = 
             <div className="navbar">
-                <div className='welcome'>{this.state.nameOfUser}</div>
                 <div className='title'>Lesson Tracker</div>
                 <div className='date'>{ todaysDate.toDateString() }</div>
+                <div className='welcome'>{this.state.nameOfUser}</div>
                 <Button id='logout' onClick = { this.logout }> Logout </Button>
             </div>
         }
