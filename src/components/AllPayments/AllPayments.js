@@ -137,13 +137,13 @@ class AllPayments extends Component {
          this.setState({
             chartData: {
                 
-                labels: [moment().format('MMM-YY'), moment().subtract(1, 'months').format('MMM-YY'), moment().subtract(2, 'months').format('MMM-YY'), moment().subtract(3, 'months').format('MMM-YY'), moment().subtract(4, 'months').format('MMM-YY'), moment().subtract(5, 'months').format('MMM-YY'), moment().subtract(6, 'months').format('MMM-YY'), moment().subtract(7, 'months').format('MMM-YY'), moment().subtract(8, 'months').format('MMM-YY'), moment().subtract(9, 'months').format('MMM-YY'), moment().subtract(10, 'months').format('MMM-YY'), moment().subtract(11, 'months').format('MMM-YY'), moment().subtract(12, 'months').format('MMM-YY') ],
+                labels: [moment().format('MMM-YY'), moment().subtract(1, 'months').format('MMM-YY'), moment().subtract(2, 'months').format('MMM-YY'), moment().subtract(3, 'months').format('MMM-YY'), moment().subtract(4, 'months').format('MMM-YY'), moment().subtract(5, 'months').format('MMM-YY'), moment().subtract(6, 'months').format('MMM-YY'), moment().subtract(7, 'months').format('MMM-YY'), moment().subtract(8, 'months').format('MMM-YY'), moment().subtract(9, 'months').format('MMM-YY'), moment().subtract(10, 'months').format('MMM-YY'), moment().subtract(11, 'months').format('MMM-YY'), moment().subtract(12, 'months').format('MMM-YY') ].reverse(),
                 
                 datasets:[
                     {
                         label: 'Rolling 12 Month Payments',
                         
-                        data: prevTwelveMonthPayments,
+                        data: prevTwelveMonthPayments.reverse(),
                         
                         backgroundColor: [
                             'rgba(255,99,132, 0.6)',
@@ -157,7 +157,8 @@ class AllPayments extends Component {
                             'rgba(37, 31, 224, 1)',
                             'rgba(202, 31, 224, 1)',
                             'rgba(224, 31, 53, 1)',
-                            'rgba(138, 239, 212, 1)'
+                            'rgba(138, 239, 212, 1)',
+                            'rgba(224, 31, 31, 1)'
 
 
                         ]

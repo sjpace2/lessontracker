@@ -3,6 +3,8 @@ import axios from 'axios';
 import { getStudentData } from './../../ducks/reducer';
 import { connect } from 'react-redux';
 import './../../styles/main.css';
+import Button from '@material-ui/core/Button';
+
 
 class Dashboard extends Component {
     
@@ -28,12 +30,12 @@ class Dashboard extends Component {
           return (
             <div className='student' key={student.id}> 
               
-              <div>{student.first_name + ' ' + student.last_name} </div>
+              <div className='studentName'>{student.first_name + ' ' + student.last_name} </div>
               
-              <button className='notes' onClick = {()=>this.props.history.push(`/notes/${student.id}`)}>notes</button> 
-              <button className='details' onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}>view details</button>
-              <button className='delete' onClick = {()=>this.deleteStudent(student.id)}>delete</button>
-              <button onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}>Payments</button>
+              <Button variant='outlined' className='notes' onClick = {()=>this.props.history.push(`/notes/${student.id}`)}> Notes </Button> 
+              <Button variant='outlined' className='details' onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}> Student Details</Button>
+              <Button variant='outlined' className='delete' onClick = {()=>this.deleteStudent(student.id)}> Delete </Button>
+              <Button variant='outlined' onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}> Payments </Button>
             </div>
           )//may want to move payments button to student details page
       }) 
@@ -41,9 +43,9 @@ class Dashboard extends Component {
     return (
        <div className='dashboard'>
             <div className='add' >
-                <button className='addstudent' onClick = { ()=>this.props.history.push('/Add_student') }>Add a student</button>
-                <button className='allnotes' onClick={()=>this.props.history.push('/allNotes')}>View all student notes</button> 
-                <button className='allPayments' onClick = { ()=>this.props.history.push('/allpayments')}>All Payments</button>
+                <Button variant='contained' className='addstudent' onClick = { ()=>this.props.history.push('/Add_student') }> Add Student </Button>
+                <Button variant='contained' className='allnotes' onClick={()=>this.props.history.push('/allNotes')}>  All Notes</Button> 
+                <Button variant='contained' className='allPayments' onClick = { ()=>this.props.history.push('/allpayments')}> All Payments </Button>
             </div>
             <div className='students' >{displayedStudents}</div>
             

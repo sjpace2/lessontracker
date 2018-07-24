@@ -88,19 +88,25 @@ img {
 .add {
   display: flex;
   justify-content: space-around;
-  height: 40px; }
+  height: 40px;
+  margin-top: 10px; }
 
 .addstudent {
   border: 1px;
   background: bisque;
   height: 40px;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  text-transform: capitalize !important; }
 
 .allnotes {
   border: 1px;
   background: bisque;
   height: 40px;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  text-transform: capitalize !important; }
+
+.allPayments {
+  text-transform: capitalize !important; }
 
 .students {
   display: flex;
@@ -109,15 +115,19 @@ img {
 
 .student {
   height: 50px;
-  background: #3996A8;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
+  margin-top: 10px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+  border: 1px solid; }
   .student div {
     display: flex;
     align-items: center; }
+
+.studentName {
+  font-family: 'Roboto'; }
 
 .navbar {
   width: 100vw;
@@ -134,9 +144,10 @@ img {
   font-size: 12px;
   padding: 5px; }
 
-.logout {
-  color: black;
-  font-family: 'Montserrat', sans-serif; }
+#logout {
+  font-family: 'Montserrat', sans-serif;
+  color: beige !important;
+  text-transform: capitalize !important; }
 
 .title {
   font-family: 'Dosis', sans-serif;
@@ -145,3 +156,6 @@ img {
 .date {
   font-family: 'Montserrat', sans-serif;
   font-size: 12px; }
+
+div {
+  font-family: 'Roboto'; }

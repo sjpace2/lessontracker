@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-around;
     height: 40px;
+    margin-top: 10px;
+    
 }
 
 .addstudent {
@@ -10,6 +12,7 @@
     background: bisque;
     height: 40px;
     font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize !important;
 }
 
 .allnotes {
@@ -18,28 +21,41 @@
     background: bisque;
     height: 40px;
     font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize !important;
+
+}
+
+.allPayments {
+    text-transform: capitalize !important;
 }
 
 .students {
     display: flex;
     flex-direction: column;
     height: 300px;
+
     
     
 }
 
 .student {
     height: 50px;
-    background: #3996A8;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+    border: 1px solid;
+    
     div {
         display: flex;
         align-items: center;
+       
     }
+}
+
+.studentName {
+    font-family: 'Roboto';  
 }
 

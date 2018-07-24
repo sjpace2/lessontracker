@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from '@material-ui/core/TextField';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import {connect} from 'react-redux';
 
@@ -58,23 +65,40 @@ class Notes extends Component {
     selectedStudent = selectedStudent[0] ? selectedStudent[0] : selectedStudent
 
 
-    let filteredNotes = this.state.usersNotes.map( (note, index) => {
+    let noteDropDown = this.state.usersNotes.map( (note, index) => {
         return (
-        <div key={index}>
-             {note.date}: {note.content} 
+        <div  key={index}>
+                 <ExpansionPanel>
+                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography className='none'>
+                    {note.date} </Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                    <Typography>
+                   {note.content} 
+                    </Typography>
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+             
+             
+            
+
         </div>
         )
     })
         
         return (
             <div>
-                {selectedStudent.first_name} {selectedStudent.last_name}
+                <div>
+                    {selectedStudent.first_name} {selectedStudent.last_name}
+                </div>
+                <TextField id="multiline-flexible" label="Enter new note" multiline rowsMax="4" value={this.state.multiline} onChange={e=>this.handleNoteChange(e.target.value)}
+                    // className={classes.textField} 
+                        margin="normal"  />
+                <RaisedButton onClick={()=>this.submitNewNote(+this.props.match.params.id)} label="Save" />
+                   {noteDropDown}
+                <RaisedButton onClick={()=>this.props.history.push('/dashboard')} label="Back" />
                 
-                <input onChange={e=>this.handleNoteChange(e.target.value)} type="text"/>
-                <button onClick={()=>this.submitNewNote(+this.props.match.params.id)}>save note</button>
-                
-                {filteredNotes}
-                <button onClick={()=>this.props.history.push('/dashboard')}>Back</button>
             </div>
         )
     }
