@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Chart from './../../components/Chart/Chart';
+var moment = require('moment');
 
 class AllPayments extends Component {
     constructor () {
@@ -92,34 +93,30 @@ class AllPayments extends Component {
 
     
        
-        console.log(this.state.payments)
-
        
 
+        let currentMonth = +moment().format('MM')
+        let currentYear = +moment().format('YYYY')
+
+      
+
          let paymentsOverMonths = [{
-             month: new Date().getUTCMonth() + 1,
-             year: new Date().getUTCFullYear(),
+             month: currentMonth,
+             year: currentYear,
              payment: 0
          }]
     
       let reducedPayments = this.state.payments.reduce((acc, el) => {
-            
-            function convertMonthStringToNumber(str){
-                const months = [
-                  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-                ]
-                return months.indexOf(str)+1
-              }
 
             let obj = acc.find(month => {
-             
-                return month.month === convertMonthStringToNumber(el.date.slice(4, 7)) && month.year === +el.date.slice(11) 
-                // obj.payment += el.amount
+                
+                return month.month === +el.date.slice(0, 2) && month.year === +el.date.slice(6) 
+                
             })
             if(!obj){
                acc.push( {
-                    month: el.date.slice(4, 7),
-                    year: el.date.slice(11),
+                    month: +el.date.slice(0, 2),
+                    year: +el.date.slice(6),
                     payment: +el.amount
                 })
             } else { 
@@ -130,25 +127,21 @@ class AllPayments extends Component {
             
         }, paymentsOverMonths )
 
-        console.log(reducedPayments)
+        
 
         let prevTwelveMonthPayments = reducedPayments.map(amount=>{
             return amount.payment
         })
-        console.log(prevTwelveMonthPayments)
       
 
-        
-
-
-
-//look into using momentjs for labels...or some other way to display current month/prev 11
          this.setState({
             chartData: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                
+                labels: [moment().format('MMM-YY'), moment().subtract(1, 'months').format('MMM-YY'), moment().subtract(2, 'months').format('MMM-YY'), moment().subtract(3, 'months').format('MMM-YY'), moment().subtract(4, 'months').format('MMM-YY'), moment().subtract(5, 'months').format('MMM-YY'), moment().subtract(6, 'months').format('MMM-YY'), moment().subtract(7, 'months').format('MMM-YY'), moment().subtract(8, 'months').format('MMM-YY'), moment().subtract(9, 'months').format('MMM-YY'), moment().subtract(10, 'months').format('MMM-YY'), moment().subtract(11, 'months').format('MMM-YY'), moment().subtract(12, 'months').format('MMM-YY') ],
+                
                 datasets:[
                     {
-                        label: 'population',
+                        label: 'Rolling 12 Month Payments',
                         
                         data: prevTwelveMonthPayments,
                         

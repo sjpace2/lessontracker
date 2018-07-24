@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { getStudentData } from './../../ducks/reducer';
 import { connect } from 'react-redux';
+var moment = require('moment');
 
 class Payments extends Component {
     constructor () {
@@ -33,7 +34,7 @@ class Payments extends Component {
     }
 
     sendAmount = (amount) => {
-        let date = new Date().toDateString();
+        let date = moment().format('MM/DD/YYYY')
         let id = +this.props.match.params.id
         axios.post('/api/payments', {amount, id, date})
         .then( res => {
