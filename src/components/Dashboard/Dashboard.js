@@ -34,8 +34,8 @@ class Dashboard extends Component {
               
             <div>
              <div className='notes-button'>
-              <Button variant='outlined' className='notes' onClick = {()=>this.props.history.push(`/notes/${student.id}`)}> 
-              <p className='notes'><i className="far fa-sticky-note "></i> Notes</p> </Button> 
+              <Button variant='outlined' className='notes' onClick = {()=>this.props.history.push(`/notes/${student.id}`)}> <i className="far fa-sticky-note "></i> 
+              <p className='notes'> Notes</p> </Button> 
               </div>
               
               <div className='info-button'>

@@ -127,7 +127,7 @@ module.exports = {
         const {id: allpayment_id} = req.session.user;
         req.app.get('db').add_payments([amount, id, date])
         .then(payments => {
-        console.log(payments)
+
         req.app.get('db').add_allpayments([amount, allpayment_id, date, id, payments[0].id])
         .then(payments => res.status(200).send(payments)) 
         })
