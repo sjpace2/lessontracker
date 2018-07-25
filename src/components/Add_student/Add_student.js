@@ -96,8 +96,14 @@ class Add_student extends Component {
                     <input placeholder = "Last name" type = "text" onChange = { e => this.handleLastnameChange( e.target.value)}/>
                     <input placeholder = "Email" type = "text" onChange = { e => this.handleEmailChange( e.target.value)}/>
                     <input placeholder = "Phone" type = "text" onChange = { e => this.handlePhoneChange( e.target.value)}/>
-                    <input placeholder = "Lesson Time" type = "text" onChange = { e => this.handleTimeChange( e.target.value)}/>
+                    
                 </div>
+                
+                <div>
+            {timeSelector}
+               
+                </div>
+
                 <div>
                 <Button variant='contained' className='mon' onClick={()=>this.handleDayChange('Mon')} > Mon </Button>
                 <Button variant='contained' className='tue' onClick={()=>this.handleDayChange('Tue')} > Tue </Button>
@@ -107,10 +113,7 @@ class Add_student extends Component {
                 <Button variant='contained' className='sat' onClick={()=>this.handleDayChange('Sat')} > Sat </Button>
                 <Button variant='contained' className='sun' onClick={()=>this.handleDayChange('Sun')} > Sun </Button>
                 </div>
-            {timeSelector}
-                <div>
-               
-                </div>
+             
             <button onClick = { () => this.props.history.push('/Dashboard') }>Back to all students</button>
             <button onClick = {(event) => {this.sendStudentInfo()}} >Submit</button>
         </div>
