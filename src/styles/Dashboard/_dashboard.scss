@@ -1,6 +1,10 @@
 @import "./../fontawesome.scss";
 @import "./../solid.scss";
 
+.buttonBar {
+
+}
+
 
 .notes, .info, .delete, .payments {
     display: none;
@@ -43,6 +47,7 @@
     display: flex;
     flex-direction: column;
     height: 300px;
+    
 
     
     
@@ -54,10 +59,12 @@
     color: black;
     font-family: 'Roboto', sans-serif;
     display: flex;
-    justify-content: space-around;
+    
+    justify-content: space-between;
     align-items: center;
     background: floralwhite ;   
     box-shadow: 5px 5px 5px grey;
+
     
     div {
         display: flex;
@@ -78,6 +85,8 @@
 
 
 @media (min-width: 414px){
+
+    
     .notes {
         display: flex;
         justify-content: center; 
@@ -128,5 +137,7 @@
     }
 
 }
+
+
 
 
