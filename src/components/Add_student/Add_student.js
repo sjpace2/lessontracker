@@ -57,7 +57,7 @@ class Add_student extends Component {
     // }
 
     handleTimeChange = (value) => {
-        console.log(value && value.format(format));
+        
         this.setState({
             time : value && value.format(format)
         })
@@ -66,8 +66,8 @@ class Add_student extends Component {
     sendStudentInfo = () => {
         axios.post('/api/students', {first_name: this.state.firstname, last_name: this.state.lastname, email: this.state.email, phone: this.state.phone, day: this.state.day, time: this.state.time}).then( res => {
             this.props.createNewStudent(res.data[0])
-            this.props.history.push('/dashboard');
-        })
+        }).then(
+        this.props.history.push('/dashboard'))
     }
 
     // submitButtonOnClick = () => {
