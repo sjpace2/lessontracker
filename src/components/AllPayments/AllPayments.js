@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Chart from './../../components/Chart/Chart';
+import Button from '@material-ui/core/Button';
 
 var moment = require('moment');
 
@@ -173,7 +174,7 @@ class AllPayments extends Component {
         const indexOfLastPayment = currentPage * paymentsPerPage;
         const indexOfFirstPayment = indexOfLastPayment - paymentsPerPage;
         const currentPayments = payments.slice(indexOfFirstPayment, indexOfLastPayment);
-
+        console.log(currentPayments)
         const renderPayments = currentPayments.map( (payment, index) => {
             return <div className='payment' key = { index }>
                         ${payment.amount}, {" "} {payment.date}
@@ -188,11 +189,14 @@ class AllPayments extends Component {
         const renderPageNumbers = pageNumbers.map(number => {
             return (
 
-                <li key={number}
+                <div >
+                <Button className='numbers'
+                    key={number}
                     id={number}
                     onClick={this.handleClick}>
                     {number}
-                </li>
+                </Button>
+                </div>
             )
         })
         

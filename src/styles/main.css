@@ -220,7 +220,8 @@ div {
 .payments-pages {
   display: flex;
   flex-direction: column;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin: 24px; }
 
 .ind-payments {
   display: flex;
@@ -228,4 +229,8 @@ div {
   justify-content: space-around; }
 
 .payment {
-  display: flex; }
+  display: flex;
+  margin: 11px; }
+
+.numbers:focus {
+  background: yellow !important; }
