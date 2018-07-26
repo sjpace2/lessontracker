@@ -149,6 +149,13 @@ img {
   min-width: 40px; }
 
 @media (min-width: 414px) {
+  .dashboard {
+    display: flex; }
+  .add {
+    flex-direction: column;
+    height: 300px;
+    justify-content: space-around;
+    margin-top: 100px; }
   .notes {
     display: flex;
     justify-content: center;
