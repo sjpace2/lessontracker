@@ -115,21 +115,8 @@ img {
   height: 40px;
   margin-top: 10px; }
 
-.addstudent {
-  border: 1px;
-  background: bisque;
-  height: 40px;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: capitalize !important; }
-
-.allnotes {
-  border: 1px;
-  background: bisque;
-  height: 40px;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: capitalize !important; }
-
-.allPayments {
+.addstudent, .schedule, .allnotes, .allPayments {
+  font-size: 10px !important;
   text-transform: capitalize !important; }
 
 .students {
@@ -164,31 +151,27 @@ img {
   .notes {
     display: flex;
     justify-content: center;
-    font-size: 10px;
-    margin-right: 25px; }
+    font-size: 10px; }
   .info {
     display: flex;
     justify-content: center;
-    font-size: 10px;
-    margin-right: 10px; }
+    font-size: 10px; }
   .delete {
     display: flex;
     justify-content: center;
-    font-size: 10px;
-    margin-right: 11px; }
+    font-size: 10px; }
   .fa-sticky-note {
-    margin-left: 50px; }
+    display: none; }
   .fa-info-circle {
-    margin-left: 29px; }
+    display: none; }
   .fa-trash-alt {
-    margin-left: 29px; }
+    display: none; }
   .fa-dollar-sign {
-    margin-left: 29px; }
+    display: none; }
   .payments {
     display: flex;
     justify-content: center;
-    font-size: 10px;
-    margin-right: 22px; }
+    font-size: 10px; }
   .notes-button, .info-button, .delete-button, .payments-button {
     width: 84px !important; } }
 
@@ -229,3 +212,19 @@ img {
 
 div {
   font-family: 'Roboto'; }
+
+.page-numbers {
+  display: flex; }
+
+.payments-pages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.payments {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.payment {
+  display: flex; }

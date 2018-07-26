@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 class DeleteAlert extends Component {
     constructor(props){
         super(props)
-        console.log(this.props.state)
+       
         this.state={
           open: this.props.state
       }
@@ -36,7 +36,7 @@ class DeleteAlert extends Component {
     
 
     render(){
-        console.log(this.props.student)
+        console.log(this.props.id)
         const { fullScreen } = this.props;
         return(
             <div>
@@ -45,10 +45,10 @@ class DeleteAlert extends Component {
             open={this.props.state}
             onClose={this.handleClose}
             aria-labelledby="responsive-dialog-title">
-            <DialogTitle id="responsive-dialog-title">{`Are you sure you want to delete ${this.props.student.first_name}?`}</DialogTitle>
+            <DialogTitle id="responsive-dialog-title">{`Are you sure you want to delete ${this.props.name}?`}</DialogTitle>
             <DialogContent>
               <DialogContentText>
-                All student info and notes are about to be deleted. Payments will still be shown on the 'All Payments' page. Are you sure you'd like to proceed?
+                All student info and notes will be deleted. Would you like to proceed?
               </DialogContentText>
             </DialogContent>
             <DialogActions>

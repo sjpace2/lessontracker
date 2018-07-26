@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Chart from './../../components/Chart/Chart';
+
 var moment = require('moment');
 
 class AllPayments extends Component {
@@ -91,14 +92,8 @@ class AllPayments extends Component {
         //  let novTotal = novPayments.reduce((a,b)=>a+b)
         //  let decTotal = decPayments.reduce((a,b)=>a+b)
 
-    
-       
-       
-
         let currentMonth = +moment().format('MM')
         let currentYear = +moment().format('YYYY')
-
-      
 
          let paymentsOverMonths = [{
              month: currentMonth,
@@ -179,9 +174,8 @@ class AllPayments extends Component {
         const currentPayments = payments.slice(indexOfFirstPayment, indexOfLastPayment);
 
         const renderPayments = currentPayments.map( (payment, index) => {
-            return <div key = { index }>
-                        ${payment.amount}, {" "}
-                        {payment.date}
+            return <div className='payment' key = { index }>
+                        ${payment.amount}, {" "} {payment.date}
                    </div>    
         }) 
 
@@ -203,16 +197,19 @@ class AllPayments extends Component {
         
         return (
             <div>
-
                 <div>
-                    <ul>
+                    <Chart data={this.state.chartData}/>    
+                </div>
+                
+                <div className='payments-pages'>
+                    <ul className='payments'>
                         {renderPayments}
                     </ul>
-                    <ul id='page-numbers'>
+                    <ul className='page-numbers'>
                         {renderPageNumbers}
                     </ul>
                 </div>
-                    <Chart data={this.state.chartData}/>
+                
                     <button onClick={ ()=>this.props.history.push('/dashboard')}>Back</button>
             </div>
         )

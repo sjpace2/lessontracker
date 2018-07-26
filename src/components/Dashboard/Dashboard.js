@@ -83,7 +83,7 @@ class Dashboard extends Component {
               <p className='payments'>Payments</p> </Button>
              </div>
              <div>
-                  <DeleteAlert state={this.state.open} id={student.id} toggleState={this.onToggleStateStatus}/>
+                  <DeleteAlert state={this.state.open} id={student.id} toggleState={this.onToggleStateStatus} name = {student.first_name}/>
               </div>
              </div>
             
