@@ -1,6 +1,9 @@
 const express = require('express');
 const PORT = 3005;
 const app = express();
+
+app.use(express.static(__dirname+'/../build'))
+
 require('dotenv').config();
 const axios = require('axios');
 const massive = require('massive');
