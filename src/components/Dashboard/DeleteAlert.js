@@ -6,31 +6,46 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import withMobileDialog from '@material-ui/core/withMobileDialog';
+import axios from 'axios';
+import { getStudentData } from './../../ducks/reducer';
+import { connect } from 'react-redux';
 
+
+//use this to delete onClick = {()=>this.deleteStudent(student.id)}>
 class DeleteAlert extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
+        console.log(this.props.state)
         this.state={
-            open: false
-        }
+          open: this.props.state
+      }
     }
 
-    handleClickOpen = () => {
-        this.setState({ open: true });
-      };
     
-      handleClose = () => {
+    handleClose = () => {
         this.setState({ open: false });
-      };
+        
+    }
+
+    deleteStudent = (id) => {
+         axios.delete(`/api/students/${id}`).then(res => {
+            this.props.getStudentData(res.data)
+        })
+        this.handleClose()
+        
+    }
     
 
     render(){
+        console.log(this.props.state)
+        console.log(this.props.id)
+      
         const { fullScreen } = this.props;
         return(
             <div>
             <Dialog
             fullScreen={fullScreen}
-            open={this.state.open}
+            open={this.props.state}
             onClose={this.handleClose}
             aria-labelledby="responsive-dialog-title">
             <DialogTitle id="responsive-dialog-title">{"Use Google's location service?"}</DialogTitle>
@@ -43,7 +58,7 @@ class DeleteAlert extends Component {
               <Button onClick={this.handleClose} color="primary">
                 Disagree
               </Button>
-              <Button onClick={this.handleClose} color="primary" autoFocus>
+              <Button onClick={()=>this.deleteStudent(this.props.id)} color="primary" autoFocus>
                 Agree
               </Button>
             </DialogActions>
@@ -52,3 +67,12 @@ class DeleteAlert extends Component {
         )
     }
 }
+
+
+function mapStateToProps (state) {
+    return {
+        student: state.student
+    }
+}
+
+export default connect (mapStateToProps, {getStudentData})(DeleteAlert)

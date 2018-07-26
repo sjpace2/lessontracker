@@ -4,9 +4,20 @@ import { getStudentData } from './../../ducks/reducer';
 import { connect } from 'react-redux';
 import './../../styles/main.css';
 import Button from '@material-ui/core/Button';
+import DeleteAlert from './DeleteAlert';
+
 
 
 class Dashboard extends Component {
+    constructor(){
+        super()
+        this.state={
+            open: false
+            
+        }
+        
+        
+    }
     
     componentDidMount = () => {
         axios.get('/api/students').then(res => {
@@ -15,15 +26,20 @@ class Dashboard extends Component {
         })
     }
 
-    deleteStudent = (id) => {
-         axios.delete(`/api/students/${id}`).then(res => {
-            this.props.getStudentData(res.data)
-        })
-    }
+    // deleteStudent = (id) => {
+    //      axios.delete(`/api/students/${id}`).then(res => {
+    //         this.props.getStudentData(res.data)
+    //     })
+    // }
 
-   
+    handleClickOpen = () => {
+        this.setState({ open: true })
+        
+      };
+    
     
     render(){
+       
         
         
       let displayedStudents = this.props.student.map((student, index) => {
@@ -43,22 +59,39 @@ class Dashboard extends Component {
               <p className='info'>Info</p> </Button>
               </div>
               
+             
+             
               <div className='delete-button'>
-              <Button variant='outlined' className='delete' onClick = {()=>this.deleteStudent(student.id)}> <i className="far fa-trash-alt"></i> 
+             
+              <Button variant='outlined' className='delete' 
+            
+               
+                onClick={()=>this.handleClickOpen()}>
+                 <i className="far fa-trash-alt"></i> 
               <p className='delete'>Delete</p> </Button>
               </div>
+              
+              
+              
               
               <div className='payments-button'>
               <Button variant='outlined' className='payments' onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}><i className="fas fa-dollar-sign"></i> 
               <p className='payments'>Payments</p> </Button>
              </div>
+             <div>
+                  <DeleteAlert state={this.state.open} id={student.id}/>
+              </div>
              </div>
+            
             </div>
-          )//may want to move payments button to student details page
+             
+            
+          )
       }) 
 
     return (
        <div className='dashboard'>
+          <DeleteAlert/>
             <div className='add' >
                 <Button variant='contained' className='schedule' onClick = { ()=>this.props.history.push('/todaysschedule')}> Today's Schedule </Button> 
                 <Button variant='contained' className='addstudent' onClick = { ()=>this.props.history.push('/Add_student') }> Add Student </Button>
