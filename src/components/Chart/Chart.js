@@ -10,7 +10,8 @@ class Chart extends Component {
                 <Bar
                     data={this.props.data}
                     options={{
-		            maintainAspectRatio: false
+                    maintainAspectRatio: true,
+                    responsive: true
 	                }}
                 />
             </div>
