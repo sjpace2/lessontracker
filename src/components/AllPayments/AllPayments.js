@@ -167,6 +167,7 @@ class AllPayments extends Component {
         
     render () {
 
+        
         const { payments, currentPage, paymentsPerPage } = this.state;
 
         const indexOfLastPayment = currentPage * paymentsPerPage;
@@ -202,7 +203,7 @@ class AllPayments extends Component {
                 </div>
                 
                 <div className='payments-pages'>
-                    <ul className='payments'>
+                    <ul className='ind-payments'>
                         {renderPayments}
                     </ul>
                     <ul className='page-numbers'>

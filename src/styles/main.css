@@ -214,16 +214,17 @@ div {
   font-family: 'Roboto'; }
 
 .page-numbers {
-  display: flex; }
+  display: flex;
+  justify-content: space-around; }
 
 .payments-pages {
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
 
-.payments {
+.ind-payments {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around; }
 
 .payment {

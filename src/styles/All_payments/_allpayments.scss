@@ -1,6 +1,6 @@
 .page-numbers {
     display: flex;
-    
+    justify-content: space-around;
   
 }
 
@@ -12,9 +12,9 @@
  
 }
 
-.payments {
+.ind-payments {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
    
 }
