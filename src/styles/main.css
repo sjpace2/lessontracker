@@ -140,7 +140,8 @@ img {
 
 .studentName {
   font-family: 'Roboto';
-  font-size: 17px; }
+  font-size: 17px;
+  margin: 20px; }
 
 .notes, .info, .delete, .payments, .notes-button, .info-button, .delete-button, .payments-button {
   text-transform: capitalize !important;
