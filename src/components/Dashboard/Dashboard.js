@@ -36,6 +36,10 @@ class Dashboard extends Component {
         this.setState({ open: true })
         
       };
+
+    onToggleStateStatus = (deleteAlertState) => {
+        this.setState({ open : deleteAlertState})
+    }
     
     
     render(){
@@ -79,7 +83,7 @@ class Dashboard extends Component {
               <p className='payments'>Payments</p> </Button>
              </div>
              <div>
-                  <DeleteAlert state={this.state.open} id={student.id}/>
+                  <DeleteAlert state={this.state.open} id={student.id} toggleState={this.onToggleStateStatus}/>
               </div>
              </div>
             

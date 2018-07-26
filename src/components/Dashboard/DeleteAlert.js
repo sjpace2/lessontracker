@@ -24,7 +24,7 @@ class DeleteAlert extends Component {
     
     handleClose = () => {
         this.setState({ open: false });
-        
+        this.props.toggleState(this.state.open)
     }
 
     deleteStudent = (id) => {
@@ -32,14 +32,11 @@ class DeleteAlert extends Component {
             this.props.getStudentData(res.data)
         })
         this.handleClose()
-        
     }
     
 
     render(){
-        console.log(this.props.state)
-        console.log(this.props.id)
-      
+        console.log(this.props.student)
         const { fullScreen } = this.props;
         return(
             <div>
@@ -48,7 +45,7 @@ class DeleteAlert extends Component {
             open={this.props.state}
             onClose={this.handleClose}
             aria-labelledby="responsive-dialog-title">
-            <DialogTitle id="responsive-dialog-title">{"Use Google's location service?"}</DialogTitle>
+            <DialogTitle id="responsive-dialog-title">{`Are you sure you want to delete ${this.props.student.first_name}?`}</DialogTitle>
             <DialogContent>
               <DialogContentText>
                 All student info and notes are about to be deleted. Payments will still be shown on the 'All Payments' page. Are you sure you'd like to proceed?
