@@ -26,7 +26,8 @@
 .students {
     display: flex;
     flex-direction: column;
-    height: 300px;  
+    height: 300px; 
+    width: 100vw; 
 }
 
 .student {
@@ -61,7 +62,7 @@
 
 
 
-@media (min-width: 414px){
+@media (min-width: 550px){
 
 
     .dashboard {
@@ -73,6 +74,8 @@
         height: 100vh;
         justify-content: space-around;
         background: slategrey;
+        width: 200px;
+        align-items: center;
     }
 
     .notes {
@@ -122,6 +125,14 @@
     }
 
 }
+
+@media (min-width: 750px){
+    .students {
+        width: 641px;
+    }
+}
+
+
 
 
 

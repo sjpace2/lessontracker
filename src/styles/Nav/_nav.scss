@@ -25,9 +25,7 @@
 
 }
 
-.nav {
-    
-}
+
 
 .title {
     margin-left: 10px;
@@ -40,9 +38,15 @@
     font-size: 10px;
 }
 
-@media (min-width: 414px){
+@media (min-width: 550px){
     .welcome {
         display: flex;
     }
    
+}
+
+@media (min-width: 750px){
+    .navbar {
+        width: 842px;
+    }
 }

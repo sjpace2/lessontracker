@@ -122,7 +122,8 @@ img {
 .students {
   display: flex;
   flex-direction: column;
-  height: 300px; }
+  height: 300px;
+  width: 100vw; }
 
 .student {
   height: 50px;
@@ -148,14 +149,16 @@ img {
   width: 67px;
   min-width: 40px; }
 
-@media (min-width: 414px) {
+@media (min-width: 550px) {
   .dashboard {
     display: flex; }
   .add {
     flex-direction: column;
     height: 100vh;
     justify-content: space-around;
-    background: slategrey; }
+    background: slategrey;
+    width: 200px;
+    align-items: center; }
   .notes {
     display: flex;
     justify-content: center;
@@ -182,6 +185,10 @@ img {
     font-size: 10px; }
   .notes-button, .info-button, .delete-button, .payments-button {
     width: 84px !important; } }
+
+@media (min-width: 750px) {
+  .students {
+    width: 641px; } }
 
 .navbar {
   width: 100vw;
@@ -214,9 +221,13 @@ img {
   font-family: 'Montserrat', sans-serif;
   font-size: 10px; }
 
-@media (min-width: 414px) {
+@media (min-width: 550px) {
   .welcome {
     display: flex; } }
+
+@media (min-width: 750px) {
+  .navbar {
+    width: 842px; } }
 
 div {
   font-family: 'Roboto'; }
