@@ -126,7 +126,7 @@ img {
 
 .student {
   height: 50px;
-  margin-top: 10px;
+  margin-top: 40px;
   color: black;
   font-family: 'Roboto', sans-serif;
   display: flex;
@@ -153,9 +153,9 @@ img {
     display: flex; }
   .add {
     flex-direction: column;
-    height: 300px;
+    height: 100vh;
     justify-content: space-around;
-    margin-top: 100px; }
+    background: slategrey; }
   .notes {
     display: flex;
     justify-content: center;
