@@ -2,6 +2,7 @@ const express = require('express');
 const PORT = 3005;
 const app = express();
 
+
 app.use(express.static(__dirname+'/../build'))
 
 require('dotenv').config();
@@ -15,7 +16,8 @@ let {
    CLIENT_SECRET,
    REACT_APP_DOMAIN,
    CONNECTION_STRING,
-   SESSION_SECRET
+   SESSION_SECRET,
+   PROTOCOL
 } = process.env
 
 const ctrl = require('./controller');
