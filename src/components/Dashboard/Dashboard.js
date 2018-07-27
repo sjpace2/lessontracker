@@ -9,6 +9,7 @@ import DeleteAlert from './DeleteAlert';
 
 
 
+
 class Dashboard extends Component {
     constructor(){
         super()
@@ -16,12 +17,13 @@ class Dashboard extends Component {
             open: false,
             isHovering: false,
             usersNotes: [],
-            userPic: ''
+            
               
         }
       
     }
     
+
     componentDidMount = () => {
         axios.get('/api/students').then(res => {
             
@@ -67,9 +69,7 @@ class Dashboard extends Component {
     
     
     render(){
-       
-        
-        
+  
       let displayedStudents = this.props.student.map((student, index) => {
           return (
             <div className='student' key={student.id}> 
@@ -122,12 +122,7 @@ class Dashboard extends Component {
        <div className='dashboard'>  
          
           <DeleteAlert/>
-            <div className='add' >
-                <Button variant='contained' className='schedule' onClick = { ()=>this.props.history.push('/todaysschedule')}> Today's Schedule </Button> 
-                <Button variant='contained' className='addstudent' onClick = { ()=>this.props.history.push('/Add_student') }> Add Student </Button>
-                <Button variant='contained' className='allnotes' onClick={()=>this.props.history.push('/allNotes')}>  All Notes</Button> 
-                <Button variant='contained' className='allPayments' onClick = { ()=>this.props.history.push('/allpayments')}> All Payments </Button>
-            </div>
+          
             {
           this.state.isHovering &&
           <div className='usersNotes'>
@@ -135,7 +130,8 @@ class Dashboard extends Component {
           </div>
         }
             <div className='students' >{displayedStudents}</div>
-        
+
+
         </div>
     )
     }

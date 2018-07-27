@@ -146,10 +146,6 @@ img {
   height: 40px;
   margin-top: 10px; }
 
-.addstudent, .schedule, .allnotes, .allPayments {
-  font-size: 10px !important;
-  text-transform: capitalize !important; }
-
 .students {
   display: flex;
   flex-direction: column;
@@ -217,11 +213,53 @@ img {
   .notes-button, .info-button, .delete-button, .payments-button {
     width: 84px !important; } }
 
-.pic {
+.side-menu {
   border-radius: 5px;
+  color: ghostwhite;
+  width: 30px;
+  height: 30px;
+  background: #163669;
+  border: 1px solid bisque;
+  margin-left: 10px; }
+
+.hamburger {
+  border-radius: 5px;
+  width: 20px;
+  height: 2px;
+  background-color: bisque;
+  margin: 4px -3px; }
+
+.addstudent, .schedule, .allnotes, .allPayments, .logout-left {
+  font-size: 16px !important; }
+
+.side-list {
+  display: flex;
+  flex-direction: column; }
+
+.left-drawer {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: baseline;
+  height: 500px;
+  justify-content: space-evenly; }
+
+.logout-left {
+  color: black;
+  font-size: 16px !important;
+  align-items: baseline; }
+
+.pic {
+  border-radius: 40px;
   margin-top: 0px;
   height: 55px;
   margin-left: 0px; }
+
+.pic-drawer {
+  border-radius: 40px;
+  margin-top: 0px;
+  height: 55px;
+  margin-left: 13px; }
 
 .navbar {
   width: 100vw;
@@ -249,9 +287,9 @@ img {
   width: 67px; }
 
 .title {
-  margin-left: 10px;
+  margin-left: 5px;
   font-family: 'Dosis', sans-serif;
-  font-size: 21px; }
+  font-size: 22px; }
 
 .date {
   font-family: 'Montserrat', sans-serif;

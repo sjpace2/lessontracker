@@ -35,7 +35,7 @@ class DeleteAlert extends Component {
     
 
     render(){
-        console.log(this.props.id)
+       
         const { fullScreen } = this.props;
         return(
             <div>
