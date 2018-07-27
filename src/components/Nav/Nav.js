@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
+var moment = require('moment');
 
 
 
@@ -10,15 +11,15 @@ class Nav extends Component {
         super ()
         this.state = {
             nameOfUser: '',
-            pic: ''
+            userPic: ''
         }
     }
 
 
     componentDidMount = () => {
-        axios.get('/api/users').then(res=>{
-            
-            this.setState({nameOfUser: res.data })
+        axios.get('/api/user-data').then(res=>{
+            console.log(res)
+            this.setState({nameOfUser: res.data.user_name, userPic: res.data.user_pic })
         })
     }
 
@@ -30,7 +31,7 @@ class Nav extends Component {
 
     render(){
        
-        let todaysDate = new Date()
+        let todaysDate = moment().format('ddd MMM DD')
         
     
     let displayNav = () => {
@@ -40,33 +41,20 @@ class Nav extends Component {
             return displayNav = 
             <div className="navbar">
                 <div className='title'>Lesson Tracker</div>
-                <div className='date'>{ todaysDate.toDateString() }</div>
+                <div className='date'>{ todaysDate }</div>
                 <div className='welcome'>{this.state.nameOfUser}</div>
+                <img className='pic' src={this.state.userPic} alt="user pic"/>
                 <Button id='logout' onClick = { this.logout }> Logout </Button>
             </div>
         }
     }
     return (
        <div>
-        {displayNav()} 
+        {displayNav()}
         </div>
-    )
+        )
+    }
 }
-}
-
-// const styles = {
-//     button: {
-//       background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-//       borderRadius: 3,
-//       border: 0,
-//       color: 'white',
-//       height: 48,
-//       padding: '0 30px',
-//       boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-//       textTransfrom: 'uppercase'
-      
-//     },
-//   };
 
 export default withRouter(Nav)
 

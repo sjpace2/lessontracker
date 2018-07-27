@@ -217,9 +217,15 @@ img {
   .notes-button, .info-button, .delete-button, .payments-button {
     width: 84px !important; } }
 
+.pic {
+  border-radius: 5px;
+  margin-top: 0px;
+  height: 55px;
+  margin-left: 0px; }
+
 .navbar {
   width: 100vw;
-  height: 50px;
+  height: 76px;
   background-color: #163669;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: flex;
@@ -245,7 +251,7 @@ img {
 .title {
   margin-left: 10px;
   font-family: 'Dosis', sans-serif;
-  font-size: 16px; }
+  font-size: 21px; }
 
 .date {
   font-family: 'Montserrat', sans-serif;
@@ -253,7 +259,13 @@ img {
 
 @media (min-width: 550px) {
   .welcome {
-    display: flex; } }
+    display: flex; }
+  .title {
+    font-size: 30px; }
+  .date {
+    font-size: 15px; }
+  .welcome {
+    font-size: 15px; } }
 
 @media (min-width: 750px) {
   .navbar {

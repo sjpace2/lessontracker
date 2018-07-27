@@ -25,7 +25,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-weekday-picker": "^1.0.8",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "twilio": "^3.18.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -37,11 +38,11 @@
     "eject": "react-scripts eject"
   },
   "proxy": {
-    "/api":{
-      "target":"http://localhost:3005"
+    "/api": {
+      "target": "http://localhost:3005"
     },
-    "/auth":{
-      "target":"http://localhost:3005"
+    "/auth": {
+      "target": "http://localhost:3005"
     }
   },
   "main": "./server/server.js"

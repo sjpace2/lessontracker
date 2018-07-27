@@ -15,12 +15,11 @@ class Dashboard extends Component {
         this.state={
             open: false,
             isHovering: false,
-            usersNotes: []
-            
-            
+            usersNotes: [],
+            userPic: ''
+              
         }
-        
-        
+      
     }
     
     componentDidMount = () => {
@@ -29,8 +28,6 @@ class Dashboard extends Component {
             this.props.getStudentData(res.data)
         })
     }
-
-   
     
     handleMouseHover = (id) => {
         
@@ -123,6 +120,7 @@ class Dashboard extends Component {
 
     return (
        <div className='dashboard'>  
+         
           <DeleteAlert/>
             <div className='add' >
                 <Button variant='contained' className='schedule' onClick = { ()=>this.props.history.push('/todaysschedule')}> Today's Schedule </Button> 
