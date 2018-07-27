@@ -206,16 +206,16 @@ class AllPayments extends Component {
                     <Chart data={this.state.chartData}/>    
                 </div>
                 
-                <div className='payments-pages'>
+                {/* <div className='payments-pages'>
                     <ul className='ind-payments'>
                         {renderPayments}
                     </ul>
                     <ul className='page-numbers'>
                         {renderPageNumbers}
                     </ul>
-                </div>
+                </div> */}
                 
-                    <button onClick={ ()=>this.props.history.push('/dashboard')}>Back</button>
+                    <Button onClick={ ()=>this.props.history.push('/dashboard')}>Back</Button>
             </div>
         )
     }

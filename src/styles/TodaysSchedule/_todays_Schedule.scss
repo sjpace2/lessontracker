@@ -1,0 +1,27 @@
+.schedule-header {
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 11px;
+    font-family: roboto;
+}
+
+.todays-students {
+    height: 50px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: floralwhite;
+    box-shadow: 5px 5px 5px grey;
+    width: 75vw;
+    margin: auto;
+    padding: 7px;
+    border: 1px solid black;
+    
+}
+
+.back-button {
+   
+    margin-top: 40px !important;
+}

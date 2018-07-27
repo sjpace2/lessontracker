@@ -2,6 +2,13 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {createNewStudent} from './../../ducks/reducer';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
 
 class Student_detail extends Component {
     constructor(){
@@ -111,43 +118,43 @@ class Student_detail extends Component {
         <div>
             <h1>
                 First name: { selectedStudent.first_name ? selectedStudent.first_name : null }
-                <input onChange={e=>this.handleFirstChange(e.target.value)} type="text"/> 
-                <button onClick={ ()=>this.updateFirst(selectedStudent.id) }>save</button>
+                <TextField onChange={e=>this.handleFirstChange(e.target.value)} type="text"/> 
+                <Button onClick={ ()=>this.updateFirst(selectedStudent.id) }>update</Button>
            </h1>
 
             <h1>
                 Last name: { selectedStudent.last_name ? selectedStudent.last_name : null }
-                <input onChange={e=>this.handleLastChange(e.target.value)} type="text"/>
-                <button onClick={ ()=>this.updateLast(selectedStudent.id) }>save</button>
+                <TextField onChange={e=>this.handleLastChange(e.target.value)} type="text"/>
+                <Button onClick={ ()=>this.updateLast(selectedStudent.id) }>update</Button>
             </h1>
 
             <h1>
                 Email: { selectedStudent.email ? selectedStudent.email : null }
-                <input onChange={e=>this.handleEmailChange(e.target.value)} type="text"/>
-                <button onClick={ ()=>this.updateEmail(selectedStudent.id) }>save</button>
+                <TextField onChange={e=>this.handleEmailChange(e.target.value)} type="text"/>
+                <Button onClick={ ()=>this.updateEmail(selectedStudent.id) }>update</Button>
             </h1>
 
             <h1>
                 Phone: { selectedStudent.phone ? selectedStudent.phone : null }
-                <input onChange={e=>this.handlePhoneChange(e.target.value)} type="text"/>
-                <button onClick={ ()=>this.updatePhone(selectedStudent.id) }>save</button>
+                <TextField onChange={e=>this.handlePhoneChange(e.target.value)} type="text"/>
+                <Button onClick={ ()=>this.updatePhone(selectedStudent.id) }>update</Button>
             </h1>
 
             <h1>
                 Day: { selectedStudent.day ? selectedStudent.day : null } 
-                <input onChange={e=>this.handleDayChange(e.target.value)} type="text"/>
-                <button onClick={ ()=>this.updateDay(selectedStudent.id) }>save</button>
+                <TextField onChange={e=>this.handleDayChange(e.target.value)} type="text"/>
+                <Button onClick={ ()=>this.updateDay(selectedStudent.id) }>update</Button>
             </h1>
 
             <h1>
                 Time: { selectedStudent.time ? selectedStudent.time : null } 
-                <input onChange={e=>this.handleTimeChange(e.target.value)} type="text"/>
-                <button onClick={ ()=>this.updateTime(selectedStudent.id) }>save</button>
+                <TextField onChange={e=>this.handleTimeChange(e.target.value)} type="text"/>
+                <Button onClick={ ()=>this.updateTime(selectedStudent.id) }>update</Button>
             </h1>
         
-            <button onClick = { ()=>this.props.history.push('/dashboard') }>Return to Students</button>
+            <Button onClick = { ()=>this.props.history.push('/dashboard') }>Back</Button>
             
-            <button>Notes</button>
+            <Button onClick = {()=>this.props.history.push(`/notes/${this.props.match.params.id}`)}>Notes</Button>
 
             {/* <button onClick = { ()=>this.props.history.push('/Edit_student') } >Edit</button> */}
 

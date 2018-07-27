@@ -46,7 +46,8 @@ class Dashboard extends Component {
         }
 
       handleMouseHoverLeave = () => {
-            this.setState(this.toggleHoverState)
+        this.setState({usersNotes: []})    
+        this.setState(this.toggleHoverState)
       }
 
       

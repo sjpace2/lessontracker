@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getStudentData} from './../../ducks/reducer';
+import Button from '@material-ui/core/Button';
 var moment = require('moment');
+
 
 
 class TodaysSchedule extends Component {
@@ -39,7 +41,7 @@ class TodaysSchedule extends Component {
         let displayedStudents = []
         sortedStudents.map( (student, index) => {
             if (student.day.includes(currentDay)) {
-            displayedStudents.push(<div key={index}>{student.first_name + " " + student.last_name + " " + student.time + " "}</div>)
+            displayedStudents.push(<div className='todays-students' key={index}>{student.first_name + " " + student.last_name + " " + student.time + " "}</div>)
             }
         })
         
@@ -52,7 +54,7 @@ class TodaysSchedule extends Component {
         return (
             <div>
                 
-                <div>
+                <div className='schedule-header'>
                 Lessons for {moment(date, "YYYY-MM-DD").format('ddd D MMM')}
                 </div>
                 <div>
@@ -60,6 +62,7 @@ class TodaysSchedule extends Component {
                 {this.getTodaysSchedule()}
 
                 </div>
+                <Button className='back-button' onClick={()=>this.props.history.push('/dashboard')}>Back</Button>
             </div>
         )
     }

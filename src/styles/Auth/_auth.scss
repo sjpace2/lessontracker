@@ -9,13 +9,16 @@
     height: 100vh;
     justify-content: center;
     
-	
-    
+}
+
+.login-button {
+    text-transform: capitalize !important;
+    background-color: white !important;
 }
 
 img {
     height: 79px;
-    margin: -101px 1px 1px -310px;
+    margin: -101px 1px 1px -362px;
 }
 
 .logo {
@@ -34,7 +37,7 @@ img {
 .slogan {
     font-family: 'Montserrat', sans-serif;
     color: white;
-    margin: -10px -120px 50px 100px;
+    margin: -16px -126px 50px 100px;
     text-transform: uppercase;
 }
 

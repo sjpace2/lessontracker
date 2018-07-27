@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './../../styles/Auth/logo/logo.png';
+import Button from '@material-ui/core/Button';
 
 export default function Auth () {
     
@@ -23,8 +24,8 @@ export default function Auth () {
             Teach Simply
             </div>
             
-            <div className="button">
-            <button onClick={login} >Enter</button>
+            <div>
+            <Button className="login-button" onClick={login} >Login</Button>
             </div>
         </div>
     )

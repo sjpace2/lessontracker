@@ -5,7 +5,12 @@ import {createNewStudent} from './../../ducks/reducer';
 import Button from '@material-ui/core/Button';
 import TimePicker from 'rc-time-picker';
 import moment from 'moment';
+import TextField from '@material-ui/core/TextField';
 import 'rc-time-picker/assets/index.css';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 const now = moment().hour(0).minute(0);
 const format = 'h:mm a';
 
@@ -46,9 +51,11 @@ class Add_student extends Component {
         })
     }
     handleDayChange = (value) => {
+        
         this.setState({
            day : value
         })
+        
     }
     // handleTimeChange = (value) => {
     //     this.setState({
@@ -70,52 +77,64 @@ class Add_student extends Component {
         this.props.history.push('/dashboard'))
     }
 
-    // submitButtonOnClick = () => {
-    //     this.sendStudentInfo();
-    //     this.props.history.push('/dashboard');
-    // }
-    
-
 
     render() {
       let timeSelector =     <TimePicker
-      showSecond={false}
-      defaultValue={now}
-      className="xxx"
-      onChange={this.handleTimeChange}
-      format={format}
-      use12Hours
-      inputReadOnly
-    />
+                                showSecond={false}
+                                defaultValue={now}
+                                className="xxx"
+                                onChange={this.handleTimeChange}
+                                format={format}
+                                use12Hours
+                                inputReadOnly
+                                />
     return (
         <div>
            
-            <div>add student info here</div>
-                <div>
-                    <input placeholder = "First name" type = "text" onChange = { e => this.handleFirstnameChange( e.target.value )} />
-                    <input placeholder = "Last name" type = "text" onChange = { e => this.handleLastnameChange( e.target.value)}/>
-                    <input placeholder = "Email" type = "text" onChange = { e => this.handleEmailChange( e.target.value)}/>
-                    <input placeholder = "Phone" type = "text" onChange = { e => this.handlePhoneChange( e.target.value)}/>
+            <div className='add-info-title'>enter student details</div>
+                <div className='student-info'>
+                    <TextField className='first_name' placeholder = "First name" type = "text" onChange = { e => this.handleFirstnameChange( e.target.value )} />
+                    <TextField className='last_name' placeholder = "Last name" type = "text" onChange = { e => this.handleLastnameChange( e.target.value)}/>
+                    <TextField className='email' placeholder = "Email" type = "text" onChange = { e => this.handleEmailChange( e.target.value)}/>
+                    <TextField className='phone' placeholder = "Phone" type = "text" onChange = { e => this.handlePhoneChange( e.target.value)}/>
                     
-                </div>
+            </div>
                 
-                <div>
-            {timeSelector}
-               
-                </div>
-
-                <div>
-                <Button variant='contained' className='mon' onClick={()=>this.handleDayChange('Mon')} > Mon </Button>
-                <Button variant='contained' className='tue' onClick={()=>this.handleDayChange('Tue')} > Tue </Button>
-                <Button variant='contained' className='wed' onClick={()=>this.handleDayChange('Wed')} > Wed </Button>
-                <Button variant='contained' className='thu' onClick={()=>this.handleDayChange('Thu')} > Thu </Button>
-                <Button variant='contained' className='fri' onClick={()=>this.handleDayChange('Fri')} > Fri </Button>
-                <Button variant='contained' className='sat' onClick={()=>this.handleDayChange('Sat')} > Sat </Button>
-                <Button variant='contained' className='sun' onClick={()=>this.handleDayChange('Sun')} > Sun </Button>
-                </div>
-             
-            <button onClick = { () => this.props.history.push('/Dashboard') }>Back to all students</button>
-            <button onClick = {(event) => {this.sendStudentInfo()}} >Submit</button>
+        <div className='day'>
+            <form  autoComplete="off">
+        <FormControl >
+          <InputLabel htmlFor="age-simple">Day</InputLabel>
+          <Select
+            value={this.state.day}
+            onChange={(e)=>this.handleDayChange(e.target.value)}
+            inputProps={{
+              name: 'day',
+              id: 'day-simple',
+            }}
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={'Mon'}>Monday</MenuItem>
+            <MenuItem value={'Tue'}>Tuesday</MenuItem>
+            <MenuItem value={'Wed'}>Wednesday</MenuItem>
+            <MenuItem value={'Thu'}>Thursday</MenuItem>
+            <MenuItem value={'Fri'}>Friday</MenuItem>
+            <MenuItem value={'Sat'}>Saturday</MenuItem>
+            <MenuItem value={'Sun'}>Sunday</MenuItem>
+            
+           </Select>
+         </FormControl>
+        
+        </form>
+    </div>
+    <div className='time'>
+        {timeSelector}
+    </div>
+          <div className='nav-buttons'>   
+            <Button onClick = { () => this.props.history.push('/Dashboard') }>Cancel</Button>
+            <Button onClick = {(event) => {this.sendStudentInfo()}} >Submit</Button>
+          </div>
         </div>
     )
 }
