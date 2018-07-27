@@ -262,6 +262,26 @@ img {
 div {
   font-family: 'Roboto'; }
 
+.d_firstname, .d_lastname, .d_email, .d_phone, .d_day, .d_time {
+  height: 50px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: floralwhite;
+  box-shadow: 5px 5px 5px grey;
+  width: 75vw;
+  margin: auto;
+  padding: 7px;
+  border: 1px solid black; }
+
+.d_textfield {
+  width: 50%; }
+
+.navbuttons {
+  margin-top: 20px; }
+
 .page-numbers {
   display: flex;
   justify-content: space-around; }
@@ -316,3 +336,20 @@ div {
 
 .back-to-dashboard {
   margin-top: 20px !important; }
+
+.ind-payments {
+  height: 50px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: floralwhite;
+  box-shadow: 5px 5px 5px grey;
+  width: 75vw;
+  margin: auto;
+  padding: 7px;
+  border: 1px solid black; }
+
+.payments-back-right {
+  float: right; }

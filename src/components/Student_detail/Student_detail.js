@@ -116,49 +116,58 @@ class Student_detail extends Component {
    
     return (
         <div>
-            <h1>
+            <div className='add-info-title'>
+                {selectedStudent.first_name} {selectedStudent.last_name}
+            </div>
+            
+            <div className='student-details'>
+            <h1 className='d_firstname'>
                 First name: { selectedStudent.first_name ? selectedStudent.first_name : null }
-                <TextField onChange={e=>this.handleFirstChange(e.target.value)} type="text"/> 
+                <TextField placeholder='edit' className = 'd_textfield' onChange={e=>this.handleFirstChange(e.target.value)} type="text"/> 
                 <Button onClick={ ()=>this.updateFirst(selectedStudent.id) }>update</Button>
            </h1>
 
-            <h1>
+            <h1 className='d_lastname'>
                 Last name: { selectedStudent.last_name ? selectedStudent.last_name : null }
-                <TextField onChange={e=>this.handleLastChange(e.target.value)} type="text"/>
+                <TextField placeholder='edit' className = 'd_textfield' onChange={e=>this.handleLastChange(e.target.value)} type="text"/>
                 <Button onClick={ ()=>this.updateLast(selectedStudent.id) }>update</Button>
             </h1>
 
-            <h1>
+            <h1 className='d_email'>
                 Email: { selectedStudent.email ? selectedStudent.email : null }
-                <TextField onChange={e=>this.handleEmailChange(e.target.value)} type="text"/>
+                <TextField placeholder='edit' className = 'd_textfield' onChange={e=>this.handleEmailChange(e.target.value)} type="text"/>
                 <Button onClick={ ()=>this.updateEmail(selectedStudent.id) }>update</Button>
             </h1>
 
-            <h1>
+            <h1 className='d_phone'>
                 Phone: { selectedStudent.phone ? selectedStudent.phone : null }
-                <TextField onChange={e=>this.handlePhoneChange(e.target.value)} type="text"/>
+                <TextField placeholder='edit' className = 'd_textfield' onChange={e=>this.handlePhoneChange(e.target.value)} type="text"/>
                 <Button onClick={ ()=>this.updatePhone(selectedStudent.id) }>update</Button>
             </h1>
 
-            <h1>
+            <h1 className='d_day'>
                 Day: { selectedStudent.day ? selectedStudent.day : null } 
-                <TextField onChange={e=>this.handleDayChange(e.target.value)} type="text"/>
+                <TextField placeholder='edit' className = 'd_textfield' onChange={e=>this.handleDayChange(e.target.value)} type="text"/>
                 <Button onClick={ ()=>this.updateDay(selectedStudent.id) }>update</Button>
             </h1>
 
-            <h1>
+            <h1 className='d_time'>
                 Time: { selectedStudent.time ? selectedStudent.time : null } 
-                <TextField onChange={e=>this.handleTimeChange(e.target.value)} type="text"/>
+                <TextField placeholder='edit' className = 'd_textfield' onChange={e=>this.handleTimeChange(e.target.value)} type="text"/>
                 <Button onClick={ ()=>this.updateTime(selectedStudent.id) }>update</Button>
             </h1>
-        
+        <div className='navbuttons'>
             <Button onClick = { ()=>this.props.history.push('/dashboard') }>Back</Button>
             
             <Button onClick = {()=>this.props.history.push(`/notes/${this.props.match.params.id}`)}>Notes</Button>
 
+            <Button onClick={ ()=>this.props.history.push(`/payments/${this.props.match.params.id}`)}>Payments </Button>
+
             {/* <button onClick = { ()=>this.props.history.push('/Edit_student') } >Edit</button> */}
 
-        
+        </div>
+
+        </div>
             
 
         </div>

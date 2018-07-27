@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 import { getStudentData } from './../../ducks/reducer';
 import { connect } from 'react-redux';
+import TextField from '@material-ui/core/TextField';
 var moment = require('moment');
 
 class Payments extends Component {
@@ -61,14 +63,14 @@ class Payments extends Component {
        
        
         let displayedPayments = this.state.paymentsList.map( (payment, index) => {
-            return <div key={index} id={payment.id}>
+            return <div className='ind-payments' key={index} id={payment.id}>
                         ${payment.amount}, {" "}
                         {payment.date}
                         
-                        <button onClick = {()=>this.deletePayment(payment.id)}>delete</button>
+                        <Button onClick = {()=>this.deletePayment(payment.id)}>delete</Button>
                    </div>
         })
-        console.log(displayedPayments)
+      
         
         
         let selectedStudent = this.props.student.filter( student => {
@@ -84,16 +86,17 @@ class Payments extends Component {
                 Payments from {selectedStudent.first_name} {selectedStudent.last_name}
             </div>
             <div>
-                <input value = {this.state.payments} onChange={e=>this.handlePaymentsChange(e.target.value)} type="text"/>
-                <button onClick={ ()=>this.sendAmount(this.state.payments) }>Save</button>
+                <TextField placeholder = 'enter amount' value = {this.state.payments} onChange={e=>this.handlePaymentsChange(e.target.value)} type="text"/>
+                <Button onClick={ ()=>this.sendAmount(this.state.payments) }>Save</Button>
+                <Button className='payments-back-right' onClick={()=>this.props.history.push('/dashboard')}>Back</Button>
             </div>
             <div>
-                {displayedPayments}
+                {displayedPayments.reverse()}
             </div>
             
-            <button onClick={()=>this.props.history.push('/dashboard')}>Back</button>
+            <Button onClick={()=>this.props.history.push('/dashboard')}>Back</Button>
         </div>
-        //may want to have this back button go to student details at some point
+        
         )
     }
 }

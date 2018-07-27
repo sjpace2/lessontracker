@@ -1,4 +1,4 @@
-.d_firstname, .d_lastname, .d_email, .d_phone, .d_day, .d_time {
+.ind-payments {
     height: 50px;
     color: black;
     font-family: 'Roboto', sans-serif;
@@ -13,10 +13,6 @@
     border: 1px solid black;
 }
 
-.d_textfield {
-    width: 50%;
-}
-
-.navbuttons {
-    margin-top: 20px;
+.payments-back-right {
+    float: right;
 }
