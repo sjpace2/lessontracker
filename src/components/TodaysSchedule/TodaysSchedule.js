@@ -5,9 +5,7 @@ var moment = require('moment');
 
 
 class TodaysSchedule extends Component {
-    constructor () {
-        super ()
-    }
+    
 
     componentDidMount () {
         this.getTodaysSchedule()
@@ -41,7 +39,7 @@ class TodaysSchedule extends Component {
         let displayedStudents = []
         sortedStudents.map( (student, index) => {
             if (student.day.includes(currentDay)) {
-               displayedStudents.push(<div key={index}>{student.first_name + " " + student.last_name + " " + student.time + " "}</div>)
+            displayedStudents.push(<div key={index}>{student.first_name + " " + student.last_name + " " + student.time + " "}</div>)
             }
         })
         

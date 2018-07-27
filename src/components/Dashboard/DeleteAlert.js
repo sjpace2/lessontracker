@@ -5,7 +5,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import withMobileDialog from '@material-ui/core/withMobileDialog';
 import axios from 'axios';
 import { getStudentData } from './../../ducks/reducer';
 import { connect } from 'react-redux';

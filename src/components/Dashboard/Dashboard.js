@@ -8,11 +8,15 @@ import DeleteAlert from './DeleteAlert';
 
 
 
+
 class Dashboard extends Component {
     constructor(){
         super()
         this.state={
-            open: false
+            open: false,
+            isHovering: false,
+            usersNotes: []
+            
             
         }
         
@@ -26,11 +30,33 @@ class Dashboard extends Component {
         })
     }
 
-    // deleteStudent = (id) => {
-    //      axios.delete(`/api/students/${id}`).then(res => {
-    //         this.props.getStudentData(res.data)
-    //     })
-    // }
+   
+    
+    handleMouseHover = (id) => {
+        
+        axios.get(`/api/userNotes/${id}`)
+        .then( res => {
+            if(res.data[0] !== undefined){
+            this.setState({
+                usersNotes: res.data[0].content 
+                })  
+            } 
+        })
+        this.setState(this.toggleHoverState)
+        }
+
+      handleMouseHoverLeave = () => {
+            this.setState(this.toggleHoverState)
+      }
+
+      
+
+    toggleHoverState(state) {
+        return {
+          isHovering: !state.isHovering,
+        };
+    }
+    
 
     handleClickOpen = () => {
         this.setState({ open: true })
@@ -54,7 +80,8 @@ class Dashboard extends Component {
               
             <div className = 'buttonBar'>
              <div className='notes-button'>
-              <Button variant='outlined' className='notes'   onClick = {()=>this.props.history.push(`/notes/${student.id}`)}> <i className="far fa-sticky-note "></i> 
+              <Button variant='outlined' className='notes'  onMouseEnter={()=>this.handleMouseHover(student.id)}
+                   onMouseLeave={this.handleMouseHoverLeave} onClick = {()=>this.props.history.push(`/notes/${student.id}`)}> <i className="far fa-sticky-note "></i> 
               <p className='notes'> Notes</p> </Button> 
               </div>
               
@@ -94,7 +121,7 @@ class Dashboard extends Component {
       }) 
 
     return (
-       <div className='dashboard'>
+       <div className='dashboard'>  
           <DeleteAlert/>
             <div className='add' >
                 <Button variant='contained' className='schedule' onClick = { ()=>this.props.history.push('/todaysschedule')}> Today's Schedule </Button> 
@@ -102,8 +129,14 @@ class Dashboard extends Component {
                 <Button variant='contained' className='allnotes' onClick={()=>this.props.history.push('/allNotes')}>  All Notes</Button> 
                 <Button variant='contained' className='allPayments' onClick = { ()=>this.props.history.push('/allpayments')}> All Payments </Button>
             </div>
+            {
+          this.state.isHovering &&
+          <div className='usersNotes'>
+            {this.state.usersNotes}
+          </div>
+        }
             <div className='students' >{displayedStudents}</div>
-            
+        
         </div>
     )
     }

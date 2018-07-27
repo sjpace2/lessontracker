@@ -56,7 +56,8 @@ class Notes extends Component {
 
 
     render () {
-
+    
+    
 
     let selectedStudent = this.props.student.filter( student => {
         let param = +this.props.match.params.id
@@ -79,13 +80,12 @@ class Notes extends Component {
                     </Typography>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-             
-             
-            
-
         </div>
         )
+       
     })
+
+     
         
         return (
             <div>
