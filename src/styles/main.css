@@ -140,6 +140,9 @@ img {
 .notes, .info, .delete, .payments {
   display: none; }
 
+.payments {
+  color: green !important; }
+
 .add {
   display: flex;
   justify-content: space-around;
@@ -213,16 +216,14 @@ img {
   .notes-button, .info-button, .delete-button, .payments-button {
     width: 84px !important; } }
 
-.side-menu {
-  border-radius: 5px;
-  color: ghostwhite;
-  width: 30px;
-  height: 30px;
+.fa-bars {
   background: #163669;
-  border: 1px solid bisque;
-  margin-left: 10px; }
+  color: bisque;
+  margin-left: 10px;
+  font-size: 40px; }
 
 .hamburger {
+  display: flex;
   border-radius: 5px;
   width: 20px;
   height: 2px;
@@ -286,8 +287,13 @@ img {
   text-transform: capitalize !important;
   width: 67px; }
 
-.title {
+.title-drawer {
   margin-left: 5px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 22px; }
+
+.title {
+  margin-left: -52px;
   font-family: 'Dosis', sans-serif;
   font-size: 22px; }
 

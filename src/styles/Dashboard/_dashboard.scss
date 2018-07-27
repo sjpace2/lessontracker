@@ -19,6 +19,11 @@
 
 .notes, .info, .delete, .payments {
     display: none;
+    
+}
+
+.payments {
+    color: green !important;
 }
 
 
@@ -30,9 +35,6 @@
     margin-top: 10px;
     
 }
-
-
-
 
 .students {
     display: flex;

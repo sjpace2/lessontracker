@@ -44,7 +44,7 @@ class Nav extends Component {
         let sideList = (
             <div className='side-list'>
             <List className='left-drawer'> 
-                <div className='title'>Lesson Tracker</div>
+                <div className='title-drawer'>Lesson Tracker</div>
                 <div className='date'>{ todaysDate }</div>
                 <div className='welcome'>Welcome {this.state.nameOfUser}!</div>
                 <img className='pic-drawer' src={this.state.userPic} alt="user pic"/>
@@ -66,12 +66,15 @@ class Nav extends Component {
         } else {
             return displayNav = 
            <div className='nav'>
+           
+            
             <div className="navbar">
-                <button className='side-menu' onClick={()=>this.toggleDrawer('left', true)}>
+                {/* <button className='side-menu' onClick={()=>this.toggleDrawer('left', true)}>
                     <div className='hamburger'></div>
                     <div className='hamburger'></div>
                     <div className='hamburger'></div>
-                </button>
+                </button> */}
+                 <i onClick={()=>this.toggleDrawer('left', true)} className="fas fa-bars"></i>
                 <div className='title'>Lesson Tracker</div>
                 <div className='date'>{ todaysDate }</div>
                 <div className='welcome'>{this.state.nameOfUser}</div>
