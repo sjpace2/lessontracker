@@ -150,11 +150,34 @@ module.exports = {
         req.app.get('db').delete_payment([id])
         .then( payments => res.status(200).send( payments ))
        
-    }
+    },
 
-   
-   
- }
+    sendSMS: (req, res) => {
+        const accountSid = process.env.ACCOUNT_SID
+        const authToken = process.env.AUTH_TOKEN
+        const client = require('twilio')(accountSid, authToken);
+        const {time} = req.body;
+        const {phone} = req.body;
+        
+        client.messages
+        .create({
+            body: `You have a lesson today at ${time}`,
+            from: '+13852194597',
+            to: ('+1').concat(phone)
+        })
+        .then(message => {
+            console.log(message.sid)
+            res.status(200).send(message.sid)
+        })
+        .catch(err => {
+            console.log(err)
+        
+           
+            res.status(500).send(err)
+          })
+            }
+        
+}
 
 
 

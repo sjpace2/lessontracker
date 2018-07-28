@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import {Bar} from 'react-chartjs-2';
+import {Bar, Line} from 'react-chartjs-2';
 
 class Chart extends Component {
    
     render () {
       
         return (
-            <div>
+            <div className='bar-chart'>
                 <Bar
                     data={this.props.data}
                     options={{
                     maintainAspectRatio: true,
                     responsive: true
-	                }}
+                    }}   
                 />
             </div>
         )

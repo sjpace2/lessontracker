@@ -26,6 +26,7 @@ class Dashboard extends Component {
             
             this.props.getStudentData(res.data)
         })
+        
     }
     
     handleMouseHover = (id) => {
@@ -66,6 +67,7 @@ class Dashboard extends Component {
     
     
     render(){
+        console.log(this.props.student)
   
       let displayedStudents = this.props.student.map((student, index) => {
           return (

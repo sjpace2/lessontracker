@@ -3,6 +3,7 @@ const PORT = 3005;
 const app = express();
 
 
+
 app.use(express.static(__dirname+'/../build'))
 
 require('dotenv').config();
@@ -17,7 +18,8 @@ let {
    REACT_APP_DOMAIN,
    CONNECTION_STRING,
    SESSION_SECRET,
-   PROTOCOL
+   PROTOCOL,
+
 } = process.env
 
 const ctrl = require('./controller');
@@ -100,6 +102,7 @@ app.post('/api/payments', ctrl.addPayment);
 app.get('/api/studentpayments/:id', ctrl.getStudentPayments);
 app.get('/api/allpayments', ctrl.getAllPayments);
 app.delete('/api/deletePayment/:id', ctrl.deletePayment)
+app.post('/api/twilio', ctrl.sendSMS)
 
 
 app.listen(PORT, () => {
