@@ -126,16 +126,20 @@ img {
     color: white;
     border: none; }
 
+h1 {
+  display: flex;
+  justify-content: center; }
+
 .usersNotes {
   position: flex;
   background: aliceblue;
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  margin-left: 500px;
+  width: 50%;
+  height: 83px;
+  position: fixed;
+  margin-left: 100px;
   border-radius: 10px;
-  border: 1px dotted;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; }
+  top: 0%;
+  z-index: 99 !important; }
 
 .notes, .info, .delete, .payments {
   display: none; }
@@ -262,6 +266,10 @@ img {
   height: 55px;
   margin-left: 13px; }
 
+.nav {
+  display: flex;
+  justify-content: center; }
+
 .navbar {
   width: 100vw;
   height: 76px;
@@ -293,11 +301,12 @@ img {
   font-size: 22px; }
 
 .title {
-  margin-left: -52px;
+  margin-left: 5px;
   font-family: 'Dosis', sans-serif;
   font-size: 22px; }
 
 .date {
+  display: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 10px; }
 
@@ -307,13 +316,16 @@ img {
   .title {
     font-size: 30px; }
   .date {
+    display: flex;
     font-size: 15px; }
   .welcome {
     font-size: 15px; } }
 
 @media (min-width: 750px) {
   .navbar {
-    width: 100vw; } }
+    width: 750px; }
+  .dashboard {
+    width: 750px; } }
 
 div {
   font-family: 'Roboto'; }

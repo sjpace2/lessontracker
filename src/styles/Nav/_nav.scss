@@ -58,6 +58,11 @@
 }
 
 
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
 .navbar {
     width: 100vw;
     height: 76px;
@@ -96,12 +101,13 @@
 }
 
 .title {
-    margin-left: -52px;
+    margin-left: 5px;
     font-family: 'Dosis', sans-serif;
     font-size: 22px;
 }
 
 .date {
+    display: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
 }
@@ -114,6 +120,7 @@
         font-size: 30px;
     }
     .date {
+        display: flex;
         font-size: 15px;
     }
     .welcome {
@@ -124,7 +131,10 @@
 
 @media (min-width: 750px){
     .navbar {
-        width: 100vw;
+        width: 750px;
+    }
+    .dashboard {
+        width: 750px;
     }
   
 }

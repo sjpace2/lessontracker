@@ -3,18 +3,22 @@
 
 
 
-
+h1 {
+    display: flex;
+    justify-content: center;
+}
 
 .usersNotes {
     position: flex;
     background: aliceblue;
-    width: 150px;
-    height: 150px;
-    position: absolute; 
-    margin-left: 500px;
+    width: 50%;
+    height: 83px;
+    position: fixed; 
+    margin-left: 100px;
     border-radius: 10px;
-    border: 1px dotted;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    
+    top: 0%;
+    z-index: 99 !important;
 }
 
 .notes, .info, .delete, .payments {

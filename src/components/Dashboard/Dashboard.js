@@ -7,9 +7,6 @@ import Button from '@material-ui/core/Button';
 import DeleteAlert from './DeleteAlert';
 
 
-
-
-
 class Dashboard extends Component {
     constructor(){
         super()
