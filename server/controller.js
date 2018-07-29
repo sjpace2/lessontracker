@@ -128,7 +128,7 @@ module.exports = {
         req.app.get('db').add_payments([amount, id, date])
         .then(payments => {
 
-        req.app.get('db').add_allpayments([amount, allpayment_id, date, id, payments[0].id])
+        req.app.get('db').add_allpayments([amount, allpayment_id, date])
         .then(payments => res.status(200).send(payments)) 
         })
     },

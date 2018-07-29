@@ -14,12 +14,10 @@ import { connect } from 'react-redux';
 class DeleteAlert extends Component {
     constructor(props){
         super(props)
-       
         this.state={
           open: this.props.state
       }
     }
-
     
     handleClose = () => {
         this.setState({ open: false });
@@ -44,7 +42,7 @@ class DeleteAlert extends Component {
             open={this.props.state}
             onClose={this.handleClose}
             aria-labelledby="responsive-dialog-title">
-            <DialogTitle id="responsive-dialog-title">{`Are you sure you want to delete ${this.props.name}?`}</DialogTitle>
+            <DialogTitle id="responsive-dialog-title">{`Are you sure you want to delete ${this.props.selected_name} ${this.props.selected_id}?`}</DialogTitle>
             <DialogContent>
               <DialogContentText>
                 All student info and notes will be deleted. Would you like to proceed?
@@ -54,7 +52,7 @@ class DeleteAlert extends Component {
               <Button onClick={this.handleClose} color="primary">
                 Disagree
               </Button>
-              <Button onClick={()=>this.deleteStudent(this.props.id)} color="primary" autoFocus>
+              <Button onClick={()=>this.deleteStudent(this.props.selected_id)} color="primary" autoFocus>
                 Agree
               </Button>
             </DialogActions>

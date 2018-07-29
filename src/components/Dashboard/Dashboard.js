@@ -14,8 +14,8 @@ class Dashboard extends Component {
             open: false,
             isHovering: false,
             usersNotes: [],
-            
-              
+            selected_name: '',
+            selected_id: 0      
         }
       
     }
@@ -56,9 +56,8 @@ class Dashboard extends Component {
     }
     
 
-    handleClickOpen = () => {
-        this.setState({ open: true })
-        
+    handleClickOpen = (name, id) => {
+        this.setState({ open: true, selected_id: id, selected_name: name})
       };
 
     onToggleStateStatus = (deleteAlertState) => {
@@ -73,43 +72,37 @@ class Dashboard extends Component {
           return (
             <div className='student' key={student.id}> 
              
-              <div className='studentName'>{student.first_name + ' ' + student.last_name} </div>
+                <div className='studentName'>
+                {student.first_name + ' ' + student.last_name}
+                </div>
               
-            <div className = 'buttonBar'>
-             <div className='notes-button'>
-              <Button className='notes'  onMouseEnter={()=>this.handleMouseHover(student.id)}
-                   onMouseLeave={this.handleMouseHoverLeave} onClick = {()=>this.props.history.push(`/notes/${student.id}`)}> <i className="far fa-sticky-note "></i> 
-              <p className='notes'> Notes</p> </Button> 
-              </div>
+                <div className = 'buttonBar'>
+                  <div className='notes-button'>
+                     <Button className='notes'  onMouseEnter={()=>this.handleMouseHover(student.id)}
+                     onMouseLeave={this.handleMouseHoverLeave} onClick = {()=>this.props.history.push(`/notes/${student.id}`)}> <i className="far fa-sticky-note "></i> 
+                    <p className='notes'> Notes</p> </Button> 
+                  </div>
+                </div>
               
-              <div className='info-button'>
-              <Button className='info' onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}> <i className="fas fa-info-circle"></i>
-              <p className='info'>Info</p> </Button>
-              </div>
+                <div className='info-button'>
+                  <Button className='info' onClick = {()=>this.props.history.push(`/student_detail/${student.id}`)}> <i className="fas fa-info-circle"></i>
+                  <p className='info'>Info</p> </Button>
+                </div>
               
-             
-             
               <div className='delete-button'>
-             
-              <Button className='delete' 
-            
-               
-                onClick={()=>this.handleClickOpen()}>
+                <Button className='delete' 
+                onClick={()=>this.handleClickOpen(student.first_name, student.id)}>
                  <i className="far fa-trash-alt"></i> 
-              <p className='delete'>Delete</p> </Button>
+                <p className='delete'>Delete</p> </Button>
               </div>
-              
-              
-              
               
               <div className='payments-button'>
-              <Button className='payments' onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}><i className="fas fa-dollar-sign"></i> 
-              <p className='payments'>Payments</p> </Button>
+                <Button className='payments' onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}><i className="fas fa-dollar-sign"></i> 
+                <p className='payments'>Payments</p> </Button>
              </div>
              
              <div>
-                  <DeleteAlert state={this.state.open} id={student.id} toggleState={this.onToggleStateStatus} name={student.first_name}/>
-              </div>
+                  <DeleteAlert state={this.state.open} selected_name={this.state.selected_name} selected_id={this.state.selected_id} id={student.id} toggleState={this.onToggleStateStatus} name={student.first_name}/>
              </div>
             
             </div>
