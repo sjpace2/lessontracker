@@ -122,13 +122,13 @@ class Student_detail extends Component {
             
             <div className='student-details'>
             <h1 className='d_firstname'>
-                First name: { selectedStudent.first_name ? selectedStudent.first_name : null }
+                First: { selectedStudent.first_name ? selectedStudent.first_name : null }
                 <TextField placeholder='edit' className = 'd_textfield' onChange={e=>this.handleFirstChange(e.target.value)} type="text"/> 
                 <Button onClick={ ()=>this.updateFirst(selectedStudent.id) }>update</Button>
            </h1>
 
             <h1 className='d_lastname'>
-                Last name: { selectedStudent.last_name ? selectedStudent.last_name : null }
+                Last: { selectedStudent.last_name ? selectedStudent.last_name : null }
                 <TextField placeholder='edit' className = 'd_textfield' onChange={e=>this.handleLastChange(e.target.value)} type="text"/>
                 <Button onClick={ ()=>this.updateLast(selectedStudent.id) }>update</Button>
             </h1>

@@ -67,7 +67,8 @@ table {
   display: flex;
   flex-direction: column;
   margin-left: 70px;
-  margin-top: 10px; }
+  margin-top: 10px;
+  width: 50vw; }
 
 .nav-buttons {
   margin-top: 20px;
@@ -76,11 +77,11 @@ table {
 
 @media (min-width: 550px) {
   .rc-time-picker-input {
-    width: 20% !important; } }
+    width: 30% !important; } }
 
 @media (min-width: 750px) {
   .rc-time-picker-input {
-    width: 10% !important; } }
+    width: 25% !important; } }
 
 .login {
   display: flex;
@@ -138,7 +139,6 @@ h1 {
   height: 83px;
   position: fixed;
   margin-left: 100px;
-  border-radius: 10px;
   top: 0%;
   z-index: 99 !important; }
 
@@ -157,7 +157,6 @@ h1 {
 .students {
   display: flex;
   flex-direction: column;
-  height: 300px;
   width: 100vw; }
 
 .student {
@@ -331,6 +330,15 @@ h1 {
 div {
   font-family: 'Roboto'; }
 
+.notes-name {
+  margin-top: 10px; }
+
+.multiline-flexible {
+  width: 71%; }
+
+.main-notes {
+  margin: 15px; }
+
 .d_firstname, .d_lastname, .d_email, .d_phone, .d_day, .d_time {
   height: 50px;
   color: black;
@@ -343,7 +351,8 @@ div {
   width: 75vw;
   margin: auto;
   padding: 7px;
-  border: 1px solid black; }
+  border: 1px solid black;
+  font-size: 12px; }
 
 .d_textfield {
   width: 50%; }
@@ -372,6 +381,10 @@ div {
 
 .numbers:focus {
   background: yellow !important; }
+
+.reminder {
+  text-transform: capitalize !important;
+  width: 67px; }
 
 .schedule-header {
   height: 50px;

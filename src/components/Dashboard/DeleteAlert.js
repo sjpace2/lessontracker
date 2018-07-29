@@ -27,7 +27,7 @@ class DeleteAlert extends Component {
     }
 
     deleteStudent = (id) => {
-         axios.delete(`/api/students/${id}`).then(res => {
+        axios.delete(`/api/students/${id}`).then(res => {
             this.props.getStudentData(res.data)
         })
         this.handleClose()

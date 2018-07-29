@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -45,9 +45,10 @@ class Notes extends Component {
     submitNewNote = (id) => {
         axios.post(`/api/notes/${id}`, {note: this.state.note, date: this.state.date})
         .then(res => {
-            console.log(res.data)
+            
             this.setState({
-                usersNotes: res.data
+                usersNotes: res.data,
+                note: ''
             })
             this.componentDidMount()
         })
@@ -56,9 +57,6 @@ class Notes extends Component {
 
 
     render () {
-    
-    
-
     let selectedStudent = this.props.student.filter( student => {
         let param = +this.props.match.params.id
         return student.id === param
@@ -88,16 +86,17 @@ class Notes extends Component {
      
         
         return (
-            <div>
-                <div>
+            <div className="main-notes">
+                <div className="notes-name">
                     {selectedStudent.first_name} {selectedStudent.last_name}
                 </div>
-                <TextField id="multiline-flexible" label="Enter new note" multiline rowsMax="4" value={this.state.multiline} onChange={e=>this.handleNoteChange(e.target.value)}
-                    // className={classes.textField} 
+                <div className='notes-text-field'>
+                <TextField value={this.state.note} className='multiline-flexible' label="Enter new note" multiline rowsMax="4" onChange={e=>this.handleNoteChange(e.target.value)}
                         margin="normal"  />
-                <RaisedButton onClick={()=>this.submitNewNote(+this.props.match.params.id)} label="Save" />
+                <Button onClick={()=>this.submitNewNote(+this.props.match.params.id)} >Save</Button>
+                </div>
                    {noteDropDown}
-                <RaisedButton onClick={()=>this.props.history.push('/dashboard')} label="Back" />
+                <Button onClick={()=>this.props.history.push('/dashboard')} >Back </Button>
                 
             </div>
         )

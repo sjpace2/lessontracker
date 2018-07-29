@@ -1,3 +1,7 @@
+.reminder {
+    @include smallbutton;
+}
+
 .schedule-header {
     height: 50px;
     margin-top: 30px;

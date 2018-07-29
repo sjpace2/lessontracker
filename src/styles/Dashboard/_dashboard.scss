@@ -14,9 +14,7 @@ h1 {
     width: 50%;
     height: 83px;
     position: fixed; 
-    margin-left: 100px;
-    border-radius: 10px;
-    
+    margin-left: 100px; 
     top: 0%;
     z-index: 99 !important;
 }
@@ -43,7 +41,6 @@ h1 {
 .students {
     display: flex;
     flex-direction: column;
-    height: 300px; 
     width: 100vw 
 }
 

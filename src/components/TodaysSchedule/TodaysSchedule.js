@@ -49,7 +49,7 @@ class TodaysSchedule extends Component {
         sortedStudents.map( (student, index) => {
             if (student.day.includes(currentDay)) {
             displayedStudents.push(<div className='todays-students' key={index}>{student.first_name + " " + student.last_name + " " + student.time + " "}
-            <button onClick = { ()=>this.handleSendReminderText(student.phone, student.time) } >Send reminder text</button>
+            <Button className='reminder' onClick = { ()=>this.handleSendReminderText(student.phone, student.time) } >reminder text</Button>
             </div>)
             }
 

@@ -67,12 +67,12 @@ class Dashboard extends Component {
     
     
     render(){
-        console.log(this.props.student)
+     
   
       let displayedStudents = this.props.student.map((student, index) => {
           return (
             <div className='student' key={student.id}> 
-              
+             
               <div className='studentName'>{student.first_name + ' ' + student.last_name} </div>
               
             <div className = 'buttonBar'>
@@ -106,8 +106,9 @@ class Dashboard extends Component {
               <Button className='payments' onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}><i className="fas fa-dollar-sign"></i> 
               <p className='payments'>Payments</p> </Button>
              </div>
+             
              <div>
-                  <DeleteAlert state={this.state.open} id={student.id} toggleState={this.onToggleStateStatus} name = {student.first_name}/>
+                  <DeleteAlert state={this.state.open} id={student.id} toggleState={this.onToggleStateStatus} name={student.first_name}/>
               </div>
              </div>
             
@@ -120,7 +121,7 @@ class Dashboard extends Component {
     return (
        <div className='dashboard'>  
          
-          <DeleteAlert/>
+          <DeleteAlert />
           
             {
           this.state.isHovering &&
