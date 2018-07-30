@@ -71,11 +71,12 @@ class Dashboard extends Component {
       let displayedStudents = this.props.student.map((student, index) => {
           return (
             <div className='student' key={student.id}> 
-             
+              <div className='d_name'>
                 <div className='studentName'>
                 {student.first_name + ' ' + student.last_name}
                 </div>
-              
+              </div>
+              <div className='button-icons'>
                 <div className = 'buttonBar'>
                   <div className='notes-button'>
                      <Button className='notes'  onMouseEnter={()=>this.handleMouseHover(student.id)}
@@ -89,20 +90,22 @@ class Dashboard extends Component {
                   <p className='info'>Info</p> </Button>
                 </div>
               
+             <div className='payments-button'>
+                <Button className='payments' onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}><i className="fas fa-dollar-sign"></i> 
+                <p className='payments'>Payments</p> </Button>
+             </div>
+
               <div className='delete-button'>
                 <Button className='delete' 
                 onClick={()=>this.handleClickOpen(student.first_name, student.id)}>
                  <i className="far fa-trash-alt"></i> 
                 <p className='delete'>Delete</p> </Button>
               </div>
-              
-              <div className='payments-button'>
-                <Button className='payments' onClick={ ()=>this.props.history.push(`/payments/${student.id}`)}><i className="fas fa-dollar-sign"></i> 
-                <p className='payments'>Payments</p> </Button>
-             </div>
              
              <div>
                   <DeleteAlert state={this.state.open} selected_name={this.state.selected_name} selected_id={this.state.selected_id} id={student.id} toggleState={this.onToggleStateStatus} name={student.first_name}/>
+             </div>
+
              </div>
             
             </div>

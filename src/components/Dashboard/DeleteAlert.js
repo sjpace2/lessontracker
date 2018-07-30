@@ -42,7 +42,7 @@ class DeleteAlert extends Component {
             open={this.props.state}
             onClose={this.handleClose}
             aria-labelledby="responsive-dialog-title">
-            <DialogTitle id="responsive-dialog-title">{`Are you sure you want to delete ${this.props.selected_name} ${this.props.selected_id}?`}</DialogTitle>
+            <DialogTitle id="responsive-dialog-title">{`Are you sure you want to delete ${this.props.selected_name}?`}</DialogTitle>
             <DialogContent>
               <DialogContentText>
                 All student info and notes will be deleted. Would you like to proceed?

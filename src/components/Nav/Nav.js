@@ -48,6 +48,7 @@ class Nav extends Component {
                 <div className='date'>{ todaysDate }</div>
                 <div className='welcome'>Welcome {this.state.nameOfUser}!</div>
                 <img className='pic-drawer' src={this.state.userPic} alt="user pic"/>
+                <Button className='home' onClick={()=>this.props.history.push('/dashboard')}>Home </Button>
                 <Button className='schedule' onClick = { ()=>this.props.history.push('/todaysschedule')}> Today's Schedule </Button> 
                 <Button className='addstudent' onClick = { ()=>this.props.history.push('/Add_student') }> Add Student </Button>
                 <Button className='allnotes' onClick={()=>this.props.history.push('/allNotes')}>  All Notes</Button> 
