@@ -99,7 +99,7 @@ table {
 
 img {
   height: 79px;
-  margin: -101px 1px 1px -362px; }
+  margin: -101px 1px 1px -310px; }
 
 .logo {
   display: flex;
@@ -211,20 +211,15 @@ h1 {
     background: slategrey;
     width: 200px;
     align-items: center; }
-  .notes {
+  .notes, .info, .delete {
     display: flex;
     justify-content: center;
-    font-size: 12px;
+    font-size: 12px; }
+  .notes {
     color: #0000bb; }
   .info {
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
     color: #ff6200; }
   .delete {
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
     color: #b10000; }
   .fa-sticky-note {
     display: none; }
@@ -384,7 +379,7 @@ div {
   align-items: center;
   background: floralwhite;
   box-shadow: 5px 5px 5px grey;
-  width: 75vw;
+  width: 90vw;
   margin: auto;
   padding: 7px;
   border: 1px solid black;
