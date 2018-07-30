@@ -49,7 +49,10 @@ class allNotes extends Component {
     
     return (
         <div>
+            <div className='notes-container'>
             <div className='all-notes-title'>All Notes</div>
+            <Button className='back-to-dashboard-top' onClick={()=>this.props.history.push('/dashboard')}>Back</Button>
+            </div>
             <div>{displayedNotes}</div>
             <Button className='back-to-dashboard' onClick={()=>this.props.history.push('/dashboard')}>Back</Button>
         </div>

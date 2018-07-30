@@ -366,6 +366,10 @@ div {
 .main-notes {
   margin: 15px; }
 
+.notes-container {
+  display: flex;
+  justify-content: space-between; }
+
 .d_firstname, .d_lastname, .d_email, .d_phone, .d_day, .d_time {
   height: 50px;
   color: black;

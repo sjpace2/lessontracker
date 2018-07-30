@@ -15,3 +15,8 @@ div {
 .main-notes {
     margin: 15px;
 }
+
+.notes-container {
+    display: flex;
+    justify-content: space-between;
+}
