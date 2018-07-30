@@ -73,10 +73,9 @@ class Add_student extends Component {
     sendStudentInfo = () => {
         axios.post('/api/students', {first_name: this.state.firstname, last_name: this.state.lastname, email: this.state.email, phone: this.state.phone, day: this.state.day, time: this.state.time}).then( res => {
             this.props.createNewStudent(res.data[0])
-        }).then(
-        this.props.history.push('/dashboard'))
+            this.props.history.push('/dashboard')
+    })
     }
-
 
     render() {
       let timeSelector =     <TimePicker

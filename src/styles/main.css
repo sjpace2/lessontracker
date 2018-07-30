@@ -364,11 +364,16 @@ div {
   width: 71%; }
 
 .main-notes {
-  margin: 15px; }
+  margin: 15px;
+  width: 90vw; }
 
 .notes-container {
   display: flex;
   justify-content: space-between; }
+
+@media (min-width: 750px) {
+  .main-notes {
+    width: 747px; } }
 
 .d_firstname, .d_lastname, .d_email, .d_phone, .d_day, .d_time {
   height: 50px;
@@ -415,7 +420,8 @@ div {
 
 .reminder {
   text-transform: capitalize !important;
-  width: 67px; }
+  width: 67px;
+  color: #ff8400 !important; }
 
 .schedule-header {
   height: 50px;
@@ -432,13 +438,17 @@ div {
   align-items: center;
   background: floralwhite;
   box-shadow: 5px 5px 5px grey;
-  width: 75vw;
+  width: 90vw;
   margin: auto;
   padding: 7px;
   border: 1px solid black; }
 
 .back-button {
   margin-top: 40px !important; }
+
+@media (min-width: 750px) {
+  .todays-students {
+    width: 730px; } }
 
 .all-notes-title {
   height: 50px;

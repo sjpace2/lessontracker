@@ -14,9 +14,16 @@ div {
 
 .main-notes {
     margin: 15px;
+    width: 90vw;
 }
 
 .notes-container {
     display: flex;
     justify-content: space-between;
+}
+
+@media (min-width: 750px){
+    .main-notes {
+        width: 747px;
+    }
 }

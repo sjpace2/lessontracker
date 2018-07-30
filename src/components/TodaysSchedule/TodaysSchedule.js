@@ -68,7 +68,7 @@ class TodaysSchedule extends Component {
                 <div className='schedule-header'>
                 Lessons for {moment(date, "YYYY-MM-DD").format('ddd D MMM')}
                 </div>
-                <div>
+                <div className='todays-schedule'>
                 
                 {this.getTodaysSchedule()}
 

@@ -1,5 +1,6 @@
 .reminder {
     @include smallbutton;
+    color: rgb(255, 132, 0) !important;
 }
 
 .schedule-header {
@@ -18,14 +19,19 @@
     align-items: center;
     background: floralwhite;
     box-shadow: 5px 5px 5px grey;
-    width: 75vw;
+    width: 90vw;
     margin: auto;
     padding: 7px;
     border: 1px solid black;
-    
 }
 
 .back-button {
    
     margin-top: 40px !important;
+}
+
+@media (min-width: 750px){
+    .todays-students {
+        width: 730px;
+    }
 }
