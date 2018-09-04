@@ -10,19 +10,32 @@
     font-family: roboto;
 }
 
+.todays-schedule {
+    margin-left: 14px;
+}
+
 .todays-students {
-    height: 50px;
+    height: 33px;
+    width: 97vw;
+    margin-top: 23px;
     color: black;
     font-family: 'Roboto', sans-serif;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-align: center;
     align-items: center;
     background: floralwhite;
+    -webkit-box-shadow: 5px 5px 5px grey;
     box-shadow: 5px 5px 5px grey;
-    width: 90vw;
-    margin: auto;
+     width: 45vw;
     padding: 7px;
-    border: 1px solid black;
+}
+
+.todays-students:hover {
+    background: rgb(203, 200, 200);
+    color: green;
 }
 
 .back-button {
@@ -30,8 +43,13 @@
     margin-top: 40px !important;
 }
 
+.no-lessons {
+    color: rebeccapurple;
+}
+
 @media (min-width: 750px){
-    .todays-students {
-        width: 730px;
+    .todays-students{
+        width: 375px;
     }
 }
+

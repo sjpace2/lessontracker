@@ -1,6 +1,53 @@
 @import "./../fontawesome.scss";
 @import "./../solid.scss";
 
+.top-section {
+    display: flex;
+}
+
+.notes-payments {
+    margin-top: 83px;
+    margin-left: 29px;
+
+}
+
+.all-notes-button {
+    height: 80px;
+    width: 36vw;
+    margin-top: 20px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: floralwhite ;   
+    box-shadow: 5px 5px 5px grey;
+}
+
+.all-notes-button:hover {
+    background: rgb(203, 200, 200);
+    color: green;
+}
+
+.all-payments-button:hover {
+    background: rgb(203, 200, 200);
+    color: green;
+}
+
+.all-payments-button {
+    height: 80px;
+    width: 36vw;
+    margin-top: 20px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: floralwhite ;   
+    box-shadow: 5px 5px 5px grey;
+
+}
+
 .button-icons {
     display: flex;
 }
@@ -46,6 +93,11 @@ h1 {
     width: 100vw 
 }
 
+.all_students {
+    margin-top: 56px;
+    margin-left: 10px;
+}
+
 .student {
     height: 50px;
     width: 97vw;
@@ -65,11 +117,22 @@ h1 {
     }
 }
 
+.welcome-title {
+    font-size: 30px;
+    margin-top: 16px;
+}
+
 .studentName {
     font-family: 'Roboto';  
     font-size: 15px;
     margin: 20px;
 }
+
+.add-students-hidden {
+    display: none;
+}
+
+
 
 .notes, .info, .delete, .payments, .notes-button, .info-button, .delete-button, .payments-button {
    @include smallbutton;
@@ -78,6 +141,25 @@ h1 {
 
 .fa-sticky-note { 
     color: rgb(0, 0, 187);
+}
+
+.fa-arrow-right {
+    color: rgb(15, 218, 15);
+    animation: colorchange 1s;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes colorchange {
+    0% {color:rgb(1, 126, 1);}
+    50% {color: rgb(152, 255, 152);}
+    100% {color:rgb(1, 126, 1);}
+}
+
+.fa-arrow-left {
+    color:  rgb(15, 218, 15);
+    animation: colorchange 1s;
+    animation-iteration-count: infinite;
 }
 
 .fa-info-circle {
@@ -166,6 +248,18 @@ h1 {
     }
     .student {
         width: 750px;
+    }
+    .all-notes-button {
+        width: 303.47px;
+    }
+    .all-payments-button {
+        width: 303.47px;
+    }
+    .top-section {
+        width: 760px;
+    }
+    .todays-students {
+        width: 343px;
     }
 }
 

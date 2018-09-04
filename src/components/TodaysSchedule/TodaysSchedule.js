@@ -48,15 +48,34 @@ class TodaysSchedule extends Component {
         let displayedStudents = []
         sortedStudents.map( (student, index) => {
             if (student.day.includes(currentDay)) {
-            displayedStudents.push(<div className='todays-students' key={index}>{student.first_name + " " + student.last_name + " " + student.time + " "}
-            <Button className='reminder' onClick = { ()=>this.handleSendReminderText(student.phone, student.time) } >reminder text</Button>
+            displayedStudents.push(
+            
+            <div className='todays-students' onClick={()=>this.props.history.push(`/student_detail/${student.id}`)}>
+                <div key={index}>
+                    {`${student.first_name} ${student.last_name}`}
+                </div>
+                <div>
+                    {student.time}
+                </div>
+
             </div>)
             }
 
             
         })
+       
+
+        if(displayedStudents.length !== 0){
+             return displayedStudents;
+        } else if(displayedStudents.length === 0){
+                console.log('hello')
+            return (
+                <div className='no-lessons'>
+                    No lessons today!
+                </div>
+            )
+        }
         
-        return displayedStudents;
     }
 
     render () {
@@ -66,14 +85,14 @@ class TodaysSchedule extends Component {
             <div>
                 
                 <div className='schedule-header'>
-                Lessons for {moment(date, "YYYY-MM-DD").format('ddd D MMM')}
+               Today's Schedule:
                 </div>
                 <div className='todays-schedule'>
                 
                 {this.getTodaysSchedule()}
 
                 </div>
-                <Button className='back-button' onClick={()=>this.props.history.push('/dashboard')}>Back</Button>
+                {/* <Button className='back-button' onClick={()=>this.props.history.push('/dashboard')}>Back</Button> */}
             </div>
         )
     }

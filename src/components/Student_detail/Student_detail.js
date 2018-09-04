@@ -157,7 +157,7 @@ class Student_detail extends Component {
                 <Button onClick={ ()=>this.updateTime(selectedStudent.id) }>update</Button>
             </h1>
         <div className='navbuttons'>
-            <Button onClick = { ()=>this.props.history.push('/dashboard') }>Back</Button>
+            <Button onClick = { ()=>this.props.history.push('/dashboard') }>Dashboard</Button>
             
             <Button onClick = {()=>this.props.history.push(`/notes/${this.props.match.params.id}`)}>Notes</Button>
 

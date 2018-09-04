@@ -37,7 +37,7 @@ massive(CONNECTION_STRING).then(db => {
     console.log('DB Connected');
 }).catch( err => console.log(err));
 
-app.use(ctrl.ignoreAuthInDevelopment)
+// app.use(ctrl.ignoreAuthInDevelopment)
 
 app.get('/auth/callback', async (req, res) => {
     if(req.session.user){
@@ -108,6 +108,8 @@ app.post('/api/twilio', ctrl.sendSMS)
 app.listen(PORT, () => {
     console.log(`Listening on Port ${PORT}`);
 });
+
+
 
 
 

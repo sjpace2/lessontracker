@@ -128,6 +128,45 @@ img {
     color: white;
     border: none; }
 
+.top-section {
+  display: flex; }
+
+.notes-payments {
+  margin-top: 83px;
+  margin-left: 29px; }
+
+.all-notes-button {
+  height: 80px;
+  width: 36vw;
+  margin-top: 20px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: floralwhite;
+  box-shadow: 5px 5px 5px grey; }
+
+.all-notes-button:hover {
+  background: #cbc8c8;
+  color: green; }
+
+.all-payments-button:hover {
+  background: #cbc8c8;
+  color: green; }
+
+.all-payments-button {
+  height: 80px;
+  width: 36vw;
+  margin-top: 20px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: floralwhite;
+  box-shadow: 5px 5px 5px grey; }
+
 .button-icons {
   display: flex; }
 
@@ -162,6 +201,10 @@ h1 {
   flex-direction: column;
   width: 100vw; }
 
+.all_students {
+  margin-top: 56px;
+  margin-left: 10px; }
+
 .student {
   height: 50px;
   width: 97vw;
@@ -177,10 +220,17 @@ h1 {
     display: flex;
     align-items: center; }
 
+.welcome-title {
+  font-size: 30px;
+  margin-top: 16px; }
+
 .studentName {
   font-family: 'Roboto';
   font-size: 15px;
   margin: 20px; }
+
+.add-students-hidden {
+  display: none; }
 
 .notes, .info, .delete, .payments, .notes-button, .info-button, .delete-button, .payments-button {
   text-transform: capitalize !important;
@@ -189,6 +239,24 @@ h1 {
 
 .fa-sticky-note {
   color: #0000bb; }
+
+.fa-arrow-right {
+  color: #0fda0f;
+  animation: colorchange 1s;
+  animation-iteration-count: infinite; }
+
+@keyframes colorchange {
+  0% {
+    color: #017e01; }
+  50% {
+    color: #98ff98; }
+  100% {
+    color: #017e01; } }
+
+.fa-arrow-left {
+  color: #0fda0f;
+  animation: colorchange 1s;
+  animation-iteration-count: infinite; }
 
 .fa-info-circle {
   color: #ff6200; }
@@ -240,7 +308,15 @@ h1 {
   .notes, .info, .delete, .payments {
     font-size: 15px; }
   .student {
-    width: 750px; } }
+    width: 750px; }
+  .all-notes-button {
+    width: 303.47px; }
+  .all-payments-button {
+    width: 303.47px; }
+  .top-section {
+    width: 760px; }
+  .todays-students {
+    width: 343px; } }
 
 .fa-bars {
   background: #163669;
@@ -424,26 +500,40 @@ div {
   margin-left: 11px;
   font-family: roboto; }
 
+.todays-schedule {
+  margin-left: 14px; }
+
 .todays-students {
-  height: 50px;
+  height: 33px;
+  width: 97vw;
+  margin-top: 23px;
   color: black;
   font-family: 'Roboto', sans-serif;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-align: center;
   align-items: center;
   background: floralwhite;
+  -webkit-box-shadow: 5px 5px 5px grey;
   box-shadow: 5px 5px 5px grey;
-  width: 90vw;
-  margin: auto;
-  padding: 7px;
-  border: 1px solid black; }
+  width: 45vw;
+  padding: 7px; }
+
+.todays-students:hover {
+  background: #cbc8c8;
+  color: green; }
 
 .back-button {
   margin-top: 40px !important; }
 
+.no-lessons {
+  color: rebeccapurple; }
+
 @media (min-width: 750px) {
   .todays-students {
-    width: 730px; } }
+    width: 375px; } }
 
 .all-notes-title {
   height: 50px;

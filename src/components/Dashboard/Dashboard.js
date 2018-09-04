@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import './../../styles/main.css';
 import Button from '@material-ui/core/Button';
 import DeleteAlert from './DeleteAlert';
+import TodaysSchedule from './../../components/TodaysSchedule/TodaysSchedule';
 
 
 class Dashboard extends Component {
@@ -66,13 +67,15 @@ class Dashboard extends Component {
     
     
     render(){
-     
   
       let displayedStudents = this.props.student.map((student, index) => {
+          
+              
           return (
+           
             <div className='student' key={student.id}> 
               <div className='d_name'>
-                <div className='studentName'>
+                <div onClick={()=>this.props.history.push(`/student_detail/${student.id}`)} className='studentName'>
                 {student.first_name + ' ' + student.last_name}
                 </div>
               </div>
@@ -109,13 +112,22 @@ class Dashboard extends Component {
              </div>
             
             </div>
-             
-            
-          )
+            )
+           
+          
       }) 
 
     return (
-       <div className='dashboard'>  
+    
+      <div>
+       <div className={this.props.student.length > 0? 'add-students-hidden' : 'add-students-visible'}>
+       <div className='welcome-title'> Welcome to Lesson Tracker! </div>
+        <i class="fas fa-arrow-right"></i>
+        <Button className='new-user-button'>Add your first student</Button>
+        <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div className='dashboard'>  
          
           <DeleteAlert />
           
@@ -125,10 +137,31 @@ class Dashboard extends Component {
             {this.state.usersNotes}
           </div>
         }
-            <div className='students' >{displayedStudents}</div>
 
+        
+            <div className='students' >
+                <div className='top-section'>
+                    <div>
+                    <TodaysSchedule history={this.props.history}/>
+                    </div>
+                    <div className='notes-payments'>
+                        <div onClick={()=>this.props.history.push('/allNotes')} className='all-notes-button'>
+                        <a className='all-notes-text'>All Notes</a>
+                        </div>
+                        <div onClick={()=>this.props.history.push('/allPayments')} className='all-payments-button'>
+                        <a className='all-payments-text'>All Payments</a>
+                        </div>
+                    </div>
+                </div>
+                <div className='all_students'>
+                All students:
+                {displayedStudents} 
+                </div>
+               
+             </div>
 
         </div>
+      </div>
     )
     }
 }
