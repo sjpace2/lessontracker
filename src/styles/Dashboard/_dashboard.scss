@@ -3,11 +3,13 @@
 
 .top-section {
     display: flex;
+    justify-content: space-between;
 }
 
 .notes-payments {
     margin-top: 83px;
     margin-left: 29px;
+    margin-right: 13px;
 
 }
 
@@ -98,6 +100,8 @@ h1 {
     margin-left: 10px;
 }
 
+
+
 .student {
     height: 50px;
     width: 97vw;
@@ -115,6 +119,11 @@ h1 {
         display: flex;
         align-items: center;
     }
+}
+
+.student:hover {
+    background: rgb(203, 200, 200);
+    color: green;
 }
 
 .welcome-title {
@@ -148,6 +157,10 @@ h1 {
     animation: colorchange 1s;
     animation-iteration-count: infinite;
     
+}
+
+.notes-payments-hidden {
+    display: none;
 }
 
 @keyframes colorchange {

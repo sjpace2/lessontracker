@@ -129,11 +129,13 @@ img {
     border: none; }
 
 .top-section {
-  display: flex; }
+  display: flex;
+  justify-content: space-between; }
 
 .notes-payments {
   margin-top: 83px;
-  margin-left: 29px; }
+  margin-left: 29px;
+  margin-right: 13px; }
 
 .all-notes-button {
   height: 80px;
@@ -220,6 +222,10 @@ h1 {
     display: flex;
     align-items: center; }
 
+.student:hover {
+  background: #cbc8c8;
+  color: green; }
+
 .welcome-title {
   font-size: 30px;
   margin-top: 16px; }
@@ -244,6 +250,9 @@ h1 {
   color: #0fda0f;
   animation: colorchange 1s;
   animation-iteration-count: infinite; }
+
+.notes-payments-hidden {
+  display: none; }
 
 @keyframes colorchange {
   0% {
@@ -323,6 +332,9 @@ h1 {
   color: bisque;
   margin-left: 10px;
   font-size: 40px; }
+
+.fa-bars:hover {
+  color: #3fe63f; }
 
 .hamburger {
   display: flex;

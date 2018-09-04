@@ -73,9 +73,9 @@ class Dashboard extends Component {
               
           return (
            
-            <div className='student' key={student.id}> 
+            <div onClick={()=>this.props.history.push(`/student_detail/${student.id}`)} className='student' key={student.id}> 
               <div className='d_name'>
-                <div onClick={()=>this.props.history.push(`/student_detail/${student.id}`)} className='studentName'>
+                <div className='studentName'>
                 {student.first_name + ' ' + student.last_name}
                 </div>
               </div>
@@ -142,9 +142,9 @@ class Dashboard extends Component {
             <div className='students' >
                 <div className='top-section'>
                     <div>
-                    <TodaysSchedule history={this.props.history}/>
+                        <TodaysSchedule history={this.props.history}/>
                     </div>
-                    <div className='notes-payments'>
+                    <div className={this.props.student.length > 0 ? 'notes-payments' : 'notes-payments-hidden'}>
                         <div onClick={()=>this.props.history.push('/allNotes')} className='all-notes-button'>
                         <a className='all-notes-text'>All Notes</a>
                         </div>
