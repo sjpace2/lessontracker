@@ -207,6 +207,9 @@ h1 {
   margin-top: 56px;
   margin-left: 10px; }
 
+.studentName {
+  text-transform: capitalize !important; }
+
 .student {
   height: 50px;
   width: 97vw;
@@ -221,10 +224,6 @@ h1 {
   .student div {
     display: flex;
     align-items: center; }
-
-.student:hover {
-  background: #cbc8c8;
-  color: green; }
 
 .welcome-title {
   font-size: 30px;

@@ -73,11 +73,11 @@ class Dashboard extends Component {
               
           return (
            
-            <div onClick={()=>this.props.history.push(`/student_detail/${student.id}`)} className='student' key={student.id}> 
+            <div className='student' key={student.id}> 
               <div className='d_name'>
-                <div className='studentName'>
+                <Button onClick={()=>this.props.history.push(`/student_detail/${student.id}`)} className='studentName'>
                 {student.first_name + ' ' + student.last_name}
-                </div>
+                </Button>
               </div>
               <div className='button-icons'>
                 <div className = 'buttonBar'>
@@ -123,7 +123,7 @@ class Dashboard extends Component {
        <div className={this.props.student.length > 0? 'add-students-hidden' : 'add-students-visible'}>
        <div className='welcome-title'> Welcome to Lesson Tracker! </div>
         <i class="fas fa-arrow-right"></i>
-        <Button className='new-user-button'>Add your first student</Button>
+        <Button className='new-user-button' onClick={()=>this.props.history.push('/Add_student')}>Add your first student</Button>
         <i class="fas fa-arrow-left"></i>
         </div>
 
