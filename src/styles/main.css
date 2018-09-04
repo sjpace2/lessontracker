@@ -432,8 +432,6 @@ h1 {
     font-size: 15px; } }
 
 @media (min-width: 750px) {
-  .navbar {
-    width: 750px; }
   .dashboard {
     width: 750px; } }
 
